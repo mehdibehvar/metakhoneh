@@ -10,3 +10,4 @@
 5. config the store in nextjs [All that is happening here is we put a <Provider> around our entire app, and pass the store as a prop.]
 6. createSlices in features directory
 7. npm install sass reactstrap bootstrap[for using reactstrap in nextjs just install them and import {import 'bootstrap/dist/css/bootstrap.min.css';} in the _app.ts no other config need]
+8. set reset css and import font in the globals.scss
