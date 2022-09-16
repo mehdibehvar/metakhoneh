@@ -42,6 +42,7 @@ $font-color:#3D3D3D;
   margin: 0;
   box-sizing: border-box;
   direction: rtl;
+  color: $font-color;
 }
 
 *::before,
@@ -49,9 +50,12 @@ $font-color:#3D3D3D;
   box-sizing: border-box;
 }
 /* Reapply the pointer cursor for anchor tags */
-a {
+a{
   cursor: revert;
 text-decoration: none;
+}
+p{
+  font-family: Tanha;
 }
 /* Remove list styles (bullets/numbers) */
 ol, ul, menu {
