@@ -1,14 +1,23 @@
 import { ReactNode } from "react";
-import MYNavbar from "../Navbar";
+import Navbar from "../Navbar";
 import { Container } from "reactstrap";
+import Meta from "../Meta";
+import MobileNavbar from "../MobileNavbar";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div style={{ backgroundColor:"rgba(255, 255, 255, 0.65)" }}>
-          <MYNavbar color={"info"} expand={"md"} />
-          <Container style={{border:"1px solid black" }}> 
+  <>
+  <Meta/>
+  <div className="layout">
+          <Navbar/>
+          <Container style={{border:"1px solid black" ,marginTop:5}}> 
             <main>{children}</main>
+            <div style={{height:"1200px",backgroundColor:"yellow"}}>
+
+            </div>
          </Container>
+       <MobileNavbar/>
     </div>
+  </>
   );
 }

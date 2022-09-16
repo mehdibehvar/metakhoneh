@@ -1,0 +1,162 @@
+.navbar_wrapper {
+  border-bottom: 1px solid #dddddd;
+  .navbar_container {
+    height: 80px;
+    .navbar_row {
+      height: 100%;
+    }
+    .brand_col {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      .brand {
+        width: 161px;
+        height: 46px;
+        margin-right: 19px;
+      }
+    }
+    .search_col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .search_input {
+        width: 100%;
+        height: 48px;
+        border-radius: 24px;
+        position: absolute;
+        top: 16px;
+        border: 1px solid #dddddd;
+      }
+      button.search_button {
+        background-color: #ff385c;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 24px;
+        left:10px;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .search_icon {
+          font-size: 22px;
+          font-weight: 500;
+          color: #ffffff;
+          margin-top: 4px;
+          margin-left: 2px;
+        }
+      }
+    }
+    .menu_col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .menu {
+        position: absolute;
+        width: 77px;
+        height: 44px;
+        left: 6px;
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid #dddddd;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+       .hambergur_menu {
+          font-size: 20px;
+          position: absolute;
+          left: 50px;
+          color: #222222;
+          cursor: pointer;
+        }
+        div.avatar_wrapper {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          overflow: hidden;
+          position: absolute;
+          left: 7px;
+        }
+        div.badge {
+          width: 16px;
+          height: 16px;
+           z-index: 10;     
+          background: #ff385c;
+          border-radius: 50%;
+          position: absolute;
+          left: 4px;
+          top: 0px;
+          span {
+            color: #ffffff;
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+            position: absolute;
+            left: 4px;
+            top: 2px;
+            
+          }
+        }
+      }
+      .globe {
+        position: absolute;
+        left: 106px;
+        background: rgba(217, 217, 217, 0.36);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        span {
+          color: #222222;
+          font-size: 20px;
+        }
+      }
+      :nth-child(3) {
+        position: absolute;
+        left: 172px;
+        background: rgba(217, 217, 217, 0.36);
+        width: 90px;
+        height: 44px;
+        border-radius: 22px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        span {
+          font-family: "Vazirmatn";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #3c3c3c;
+        }
+      }
+    }
+    @media screen and (max-width:992px) {
+        .brand_col{
+            .brand{
+                margin-right:0!important;
+            }
+        }
+    }
+   
+  @media screen and (max-width:576px) {
+    .search_col{
+        .search_input {
+            width: 90%;
+        }
+        button.search_button{
+            left:32px;
+        }
+    }
+    
+  }
+  }
+}
+
