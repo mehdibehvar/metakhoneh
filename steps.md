@@ -11,3 +11,4 @@
 6. createSlices in features directory;
 7. npm install sass reactstrap bootstrap[for using reactstrap in nextjs just install them and import {import 'bootstrap/dist/css/bootstrap.min.css';} in the _app.ts no other config need]
 8. add custom ducument.tsx to pages
+9. set reset css and import font in the globals.scss[To add a web font to your Next.js application, add the font to a Custom Document.Adding fonts link to _document is preferred over individual pages.]

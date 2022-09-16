@@ -6,3 +6,4 @@ tips:
 3-for the next Image component adress the src from public:  src={"/cargando-loading.gif"} or  src={"/assets/images/cargando-loading.gif"} so fer giving the src the url should start by /
 
 4-you should invok the createAsyncthunk function in the dispatch:[onClick={()=>dispatch(fetchQoute())}]
+5-you can add google fonts link to your document.tsx;just copy the link from {https://fonts.google.com/?selected=Material+Icons}

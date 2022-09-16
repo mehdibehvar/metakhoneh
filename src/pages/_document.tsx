@@ -12,10 +12,13 @@ class MyDocument extends Document {
       <Html lang="fa">
         <Head>
           <link rel="shortcut icon" href="/favicon.png" />
+          <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet"/>
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          
           <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet" type="text/css" />
         </Head>
         <body>
