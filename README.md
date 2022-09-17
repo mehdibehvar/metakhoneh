@@ -7,3 +7,4 @@ tips:
 
 4-you should invok the createAsyncthunk function in the dispatch:[onClick={()=>dispatch(fetchQoute())}]
 5-you can add google fonts link to your document.tsx;just copy the link from {https://fonts.google.com/?selected=Material+Icons}
+5-for ::after in a classname in sass .classsample{ &::after{}}

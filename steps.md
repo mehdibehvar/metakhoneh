@@ -14,4 +14,6 @@
 9. set reset css and import font in the globals.scss[To add a web font to your Next.js application, add the font to a Custom Document.Adding fonts link to _document is preferred over individual pages.].
 10. add getLayout property to page.
 11. create Meta component(with default value).
-12.
+12. create navbars
+13. implement-filter-section
+14. install swiper slider

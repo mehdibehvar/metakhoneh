@@ -9,7 +9,7 @@ class MyDocument extends Document {
   }
   render() {
     return (
-      <Html lang="fa">
+      <Html lang="fa" dir='rtl'> 
         <Head>
           <link rel="shortcut icon" href="/favicon.png" />
           <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet"/>

@@ -1,8 +1,6 @@
-$font-root:"/assets/fonts";
-$font-size:16px;
-$font-color:#3D3D3D;
-$main-bg-color:rgba(255, 255, 255, 0.65);
-$primary-color:#FF385C;
+
+@import "_variabels";
+////font style////////////////
 @font-face {
   font-family: Vazir-Medium;
   src: url(#{$font-root}/Vazir-Medium.eot) format("eot"),
@@ -28,7 +26,7 @@ $primary-color:#FF385C;
   font-weight: normal;
   font-style: normal;
 }
-
+//////reset////////////////
 /*
   Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
   - The "symbol *" part is to solve Firefox SVG sprite bug
@@ -92,13 +90,25 @@ textarea {
 :where([draggable="true"]) {
   -webkit-user-drag: element;
 }
-////layout////
+
+/////mixins/////////////////////
+@mixin main_border {
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+@mixin shadow {
+  box-shadow: 0px 2px 8px rgba(91, 91, 91, 0.2);
+}
+@mixin flex_position($direction,$justify-content,$align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+////layout/////////////////////////
 .layout{
   background-color: $main-bg-color;
 
 }
-
-
   ////mobile nav////
   .mobile_navbar{
     -webkit-box-align: center;
@@ -132,4 +142,71 @@ textarea {
         color: $primary-color;
       }
     }
+  }
+  /////filter section////////
+  .filter_section{
+    @include main_border;
+    @include shadow;
+    @include flex_position(row, center, end);
+    height: 100px;
+    width: 100vw;
+    background-color: $secondary-bg-color;
+    position: sticky;
+    top: 60px;
+    margin-top: 80px;
+    .filter_slide{
+     @include flex_position(column, center, center);
+     width: 56px;
+     height: 80px;
+     padding:0 4px 0 14px;
+     background-color: $secondary-bg-color;
+    color: $text-secondary-color;
+    span.title{
+     font-size: 12px;
+     font-family: tanha;
+     font-weight: 900;
+     transition: border 0.2s ease;
+    }
+    span.icon{
+     font-size: 24px;
+     transition: color 1s ease;
+    }
+    }
+    .filter_slide:hover{
+     span.title{
+      border-bottom: 2px solid black;
+      color:$text-primary-color;
+    }
+    span.icon{
+      color:$text-primary-color;
+    }
+  }
+   .swiper-button-next{
+    background-color:$secondary-bg-color;
+    border-radius: 50%;
+    border: 0.5px solid rgb(0 0 0 / 0.3);
+    width: 27px;
+    height: 27px;
+    &::after{
+      content: 'prev';
+    font-size: 12px;
+    font-weight: 900;
+    color: $text-primary-color;
+    }
+   }
+   .swiper-button-prev{
+    background-color:$secondary-bg-color;
+    border-radius: 50%;
+    border: 0.5px solid rgb(0 0 0 / 0.3);
+    width: 27px;
+    height: 27px;
+    right: 0;
+    box-shadow: 0px 0px 16px 16px white;
+    &::after{
+      content: 'prev';
+    font-size: 12px;
+    font-weight: 900;
+    color: $text-primary-color;
+    }
+   }
   }

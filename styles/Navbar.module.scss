@@ -1,5 +1,12 @@
+@import "_variabels";
 .navbar_wrapper {
   border-bottom: 1px solid #dddddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color:$secondary-bg-color;
+  z-index: 10;
   .navbar_container {
     height: 80px;
     .navbar_row {
@@ -64,6 +71,7 @@
         border-radius: 22px;
         display: flex;
         align-items: center;
+        transition: all 1s ease;
        .hambergur_menu {
           font-size: 20px;
           position: absolute;
@@ -104,12 +112,12 @@
       }
       .globe {
         position: absolute;
-        left: 106px;
-        background: rgba(217, 217, 217, 0.36);
+        left: 106px;   
         width: 44px;
         height: 44px;
         border-radius: 50%;
         border: none;
+        background: rgba(217, 217, 217, 0);
         span {
           color: #222222;
           font-size: 20px;
@@ -118,7 +126,7 @@
       :nth-child(3) {
         position: absolute;
         left: 172px;
-        background: rgba(217, 217, 217, 0.36);
+        background: rgba(217, 217, 217, 0);
         width: 90px;
         height: 44px;
         border-radius: 22px;
@@ -135,7 +143,14 @@
           align-items: center;
           text-align: center;
           color: #3c3c3c;
-        }
+        }   
+      }
+     button:hover {
+        background: rgba(217, 217, 217, 0.36);
+      }
+      .menu:hover {
+        box-shadow: -1px 2px 3px 0px #00000078;
+        transform: translate3d(1px,0px,1px);
       }
     }
     @media screen and (max-width:992px) {
