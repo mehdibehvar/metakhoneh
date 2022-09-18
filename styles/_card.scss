@@ -1,0 +1,52 @@
+////card styles///
+.card {
+    .card_swiper_frame {
+      border-radius: 15px;
+      overflow: hidden;
+      .favorite_icon{
+        color: $primary-color;
+        font-size: 24px;
+        z-index: 2;
+        cursor: pointer; 
+      }
+      .swiper-button-prev{
+        @extend .navigate_icon_next;
+       transform: rotate(180deg)
+      }
+      .swiper-button-next{
+        @extend .navigate_icon_next
+      }
+    }
+    .card_title {
+      @include flex_position(row, space-between,center);
+      .adress {
+        font-family: "Vazirmatn";
+        font-style:normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      span{
+        font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+      }
+      .star{
+        color: $primary-color;
+      }
+    }
+    .distance{
+       @extend .subtitle;
+       color: $text-secondary-color;
+    }
+  .date{
+    @extend .subtitle;
+    color: $text-secondary-color;
+  }
+  .price{
+    @extend .subtitle;
+    color: $text-primary-color;
+  }
+  }

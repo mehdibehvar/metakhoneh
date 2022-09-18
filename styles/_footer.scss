@@ -1,0 +1,36 @@
+////footer styles/////////
+.footer_section{
+    @include border_top;
+    
+    .footer_right{
+      span{
+        @extend .subtitle;
+        color: $text-secondary-color;
+        margin: 5px;
+      }
+      .company_icon{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid #DDDDDD;
+        text-align: center;
+        color: $text-secondary-color;
+        
+      }
+    }
+    .footer_left{
+      div{
+        margin-right: 10px
+      };
+      span{
+        @extend .subtitle;
+        color: $text-primary-color;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      span.up_icon{
+        font-size: 16px;
+      }
+    }
+  }

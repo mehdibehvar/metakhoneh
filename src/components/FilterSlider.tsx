@@ -23,7 +23,7 @@ const [perView,setPerView]=useState<number>(10)
   },[])
   
   
-  return (
+  return ( 
     <>
       <Swiper
         navigation={true}

@@ -4,8 +4,8 @@ import style from "../../styles/Navbar.module.scss";
 import { Container, Row, Col, Input, Button } from "reactstrap";
 import { BiSearch } from "react-icons/bi";
 import { BsGlobe2 } from "react-icons/bs";
-import { FiFilter } from "react-icons/fi";
 import { CgMenu } from "react-icons/cg";
+import Link from "next/link";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,7 +16,9 @@ function Navbar() {
       <Container className={style.navbar_container}>
         <Row className={style.navbar_row}>
           <Col className={`d-none d-sm-none d-md-flex ${style.brand_col}`} lg="4" md="3" >
-            <div className={style.brand}>
+         <Link href="/">
+         <a>
+         <div className={style.brand}>
               <Image
                 src={"/assets/images/brand.png"}
                 alt="metakhoneh"
@@ -25,6 +27,8 @@ function Navbar() {
                 height={46}
               />
             </div>
+         </a>
+         </Link>
           </Col>
           <Col className={style.search_col} lg="4" md="4"  sm="12" xs="12">
             <Input bsSize="lg" className={style.search_input} />

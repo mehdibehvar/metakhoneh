@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
                 <div>
                    <span>پشتیبانی</span>
-                    <span><IoIosArrowDropup/></span>
+                    <span className='up_icon'><IoIosArrowDropup/></span>
                 </div>
                </div>
             </Col>

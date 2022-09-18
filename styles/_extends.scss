@@ -1,0 +1,22 @@
+////extends////////
+.subtitle{
+    font-family: 'Vazirmatn';
+   font-style: normal;
+    font-weight: 500;
+   font-size: 12px;
+   line-height: 16px;
+  }
+  .navigate_icon_next{
+    background-color: $secondary-bg-color;
+    border-radius: 50%;
+    border: 0.5px solid rgb(0 0 0 / 0.3);
+    width: 27px;
+    height: 27px;
+    &::after {
+      content: "prev";
+      font-size: 12px;
+      font-weight: 900;
+      color: $text-primary-color;
+    }
+  }
+  

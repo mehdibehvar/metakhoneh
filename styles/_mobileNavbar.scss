@@ -1,0 +1,38 @@
+////mobile nav////
+.mobile_navbar {
+    -webkit-box-align: center;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid rgb(235, 235, 235);
+    position: fixed !important;
+    bottom: -60px;
+    height: 125px;
+    left: 0px;
+    right: 0px;
+    padding-bottom: 60px;
+    contain: paint;
+    background: rgb(255, 255, 255);
+    transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+      -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+      transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+      visibility 0.2s ease 0s;
+    z-index: 3;
+  
+    div {
+      span.nav_text {
+        font-size: 10px;
+        line-height: 12px;
+        color: rgb(113, 113, 113);
+      }
+      span.nav_icon {
+        font-size: 24px;
+        color: rgb(176, 176, 176);
+        cursor: pointer;
+      }
+      span.active_nav {
+        color: $primary-color;
+      }
+    }
+  }
+  

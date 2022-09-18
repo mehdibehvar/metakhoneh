@@ -1,10 +1,11 @@
-import {  Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Row } from 'reactstrap'
-import { Pagination} from 'swiper';
+import {  Card, CardBody, CardSubtitle,CardTitle } from 'reactstrap'
+import { Pagination,Navigation} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {AiFillStar} from "react-icons/ai"
 import {BiHeart} from "react-icons/bi"
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from 'next/image'
 export default function CardItem() {
@@ -20,11 +21,13 @@ export default function CardItem() {
           <BiHeart/>
         </span>
         <Swiper
+           navigation={true}
           spaceBetween={1}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination,Navigation]}
+       
         >
           <SwiperSlide>
          <div style={{width:"100%",height:"200px"}}>
