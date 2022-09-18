@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import Meta from "../Meta";
 import MobileNavbar from "../MobileNavbar";
 import FilterSection from "../FilterSection";
+import Footer from "../Footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Container> 
             <main>{children}</main>
          </Container>
+            <Footer/>
        <MobileNavbar/>
     </div>
   </>

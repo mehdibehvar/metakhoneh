@@ -1,4 +1,5 @@
 @import "_variabels";
+@import "_mixins";
 ////font style////////////////
 @font-face {
   font-family: Vazir-Medium;
@@ -92,22 +93,7 @@ textarea {
   -webkit-user-drag: element;
 }
 
-/////mixins/////////////////////
-@mixin main_border {
-  border-bottom: 1px solid rgb(235, 235, 235);
-}
-@mixin shadow {
-  box-shadow: 0px 2px 8px rgba(91, 91, 91, 0.2);
-}
-@mixin flex_position($direction, $justify-content, $align-items) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-@mixin button_border {
-  border: 1px solid #dddddd;
-}
+
 ////layout/////////////////////////
 .layout {
   background-color: $main-bg-color;
@@ -123,7 +109,7 @@ textarea {
 ////mobile nav////
 .mobile_navbar {
   -webkit-box-align: center;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid rgb(235, 235, 235);
@@ -139,7 +125,7 @@ textarea {
     -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
     transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
     visibility 0.2s ease 0s;
-  z-index: 1;
+  z-index: 3;
 
   div {
     span.nav_text {
@@ -173,11 +159,11 @@ textarea {
     @include flex_position(column, center, center);
     width: 56px;
     height: 80px;
-    padding: 0 4px 0 14px;
+    padding: 0 4px 0 0;
     background-color: $secondary-bg-color;
     color: $text-secondary-color;
     span.title {
-      font-size: 12px;
+      font-size: 11px;
       font-family: tanha;
       font-weight: 900;
       transition: border 0.2s ease;
@@ -291,3 +277,35 @@ line-height: 16px;
 }
 }
 
+////footer styles/////////
+.footer_section{
+  @include border_top;
+  
+  .footer_right{
+    span{
+      @extend .subtitle;
+      color: $text-secondary-color;
+      margin: 5px;
+    }
+    .company_icon{
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      border-radius: 50%;
+      border: 2px solid #DDDDDD;
+      text-align: center;
+      color: $text-secondary-color;
+      
+    }
+  }
+  .footer_left{
+    div{
+      margin-right: 10px
+    };
+    span{
+      @extend .subtitle;
+      color: $text-primary-color;
+      margin-right: 5px;
+    }
+  }
+}
