@@ -1,28 +1,27 @@
-
 @import "_variabels";
 ////font style////////////////
 @font-face {
   font-family: Vazir-Medium;
   src: url(#{$font-root}/Vazir-Medium.eot) format("eot"),
-  url(#{$font-root}/Vazir-Medium.woff) format("woff"),
-  url(#{$font-root}/Vazir-Medium.woff2) format("woff2");
+    url(#{$font-root}/Vazir-Medium.woff) format("woff"),
+    url(#{$font-root}/Vazir-Medium.woff2) format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: Vazir-Bold;
   src: url(#{$font-root}/Vazir-Bold.eot) format("eot"),
-  url(#{$font-root}/Vazir-Bold.woff) format("woff"),
-  url(#{$font-root}/Vazir-Bold.ttf) format("ttf"),
-  url(#{$font-root}/Vazir-Bold.woff2) format("woff2");
+    url(#{$font-root}/Vazir-Bold.woff) format("woff"),
+    url(#{$font-root}/Vazir-Bold.ttf) format("ttf"),
+    url(#{$font-root}/Vazir-Bold.woff2) format("woff2");
   font-weight: 500;
-  font-style:normal;
+  font-style: normal;
 }
 @font-face {
   font-family: Tanha;
   src: url(#{$font-root}/Tanha.eot) format("eot"),
-  url(#{$font-root}/Tanha.woff) format("woff"),
-  url(#{$font-root}/Tanha.woff2) format("woff2");
+    url(#{$font-root}/Tanha.woff) format("woff"),
+    url(#{$font-root}/Tanha.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -36,7 +35,7 @@
   display: revert;
 }
 /* Preferred box-sizing value */
-*{
+* {
   font-family: Vazir-Medium;
   padding: 0;
   margin: 0;
@@ -50,15 +49,17 @@
   box-sizing: border-box;
 }
 /* Reapply the pointer cursor for anchor tags */
-a{
+a {
   cursor: revert;
-text-decoration: none;
+  text-decoration: none;
 }
-p{
+p {
   font-family: Tanha;
 }
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
 }
 /* For images to not be able to exceed their container */
@@ -75,12 +76,12 @@ textarea {
 }
 /* fix the feature of 'hidden' attribute.
  display:revert; revert to element instead of attribute */
-:where([hidden]){
-  display:none;
+:where([hidden]) {
+  display: none;
 }
 /* revert for bug in Chromium browsers
  - fix for the content editable attribute will work properly. */
-:where([contenteditable]){
+:where([contenteditable]) {
   -moz-user-modify: read-write;
   -webkit-user-modify: read-write;
   overflow-wrap: break-word;
@@ -98,141 +99,195 @@ textarea {
 @mixin shadow {
   box-shadow: 0px 2px 8px rgba(91, 91, 91, 0.2);
 }
-@mixin flex_position($direction,$justify-content,$align-items) {
+@mixin flex_position($direction, $justify-content, $align-items) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify-content;
   align-items: $align-items;
 }
 @mixin button_border {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 ////layout/////////////////////////
-.layout{
+.layout {
   background-color: $main-bg-color;
-
 }
-  ////mobile nav////
-  .mobile_navbar{
-    -webkit-box-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-top: 1px solid rgb(235, 235, 235);
-    position: fixed !important;
-    bottom: -60px;
-    height: 125px;
-    left: 0px;
-    right: 0px;
-    padding-bottom: 60px;
-    contain: paint;
-    background: rgb(255, 255, 255);
-    transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, visibility 0.2s ease 0s ;
-    z-index: 1 ;
-   
-    div{
-      span.nav_text{
-        font-size: 10px ;
-        line-height: 12px ;
-        color: rgb(113, 113, 113);
-      }
-      span.nav_icon{
-        font-size: 24px;
-        color: rgb(176, 176, 176);
-        cursor: pointer;
-      }
-      span.active_nav{
-        color: $primary-color;
-      }
+////extends////////
+.subtitle{
+  font-family: 'Vazirmatn';
+ font-style: normal;
+  font-weight: 500;
+ font-size: 12px;
+ line-height: 16px;
+}
+////mobile nav////
+.mobile_navbar {
+  -webkit-box-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid rgb(235, 235, 235);
+  position: fixed !important;
+  bottom: -60px;
+  height: 125px;
+  left: 0px;
+  right: 0px;
+  padding-bottom: 60px;
+  contain: paint;
+  background: rgb(255, 255, 255);
+  transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+    -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+    transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s,
+    visibility 0.2s ease 0s;
+  z-index: 1;
+
+  div {
+    span.nav_text {
+      font-size: 10px;
+      line-height: 12px;
+      color: rgb(113, 113, 113);
+    }
+    span.nav_icon {
+      font-size: 24px;
+      color: rgb(176, 176, 176);
+      cursor: pointer;
+    }
+    span.active_nav {
+      color: $primary-color;
     }
   }
-  /////filter section////////
-  .filter_section{
-    @include main_border;
-    @include shadow;
-    @include flex_position(row, center, end);
-    height: 100px;
-    width: 100vw;
+}
+/////filter section////////
+.filter_section {
+  @include main_border;
+  @include shadow;
+  @include flex_position(row, center, flex-end);
+  height: 100px;
+  width: 100vw;
+  background-color: $secondary-bg-color;
+  position: sticky;
+  top: 60px;
+  margin-top: 80px;
+  z-index: 9;
+  .filter_slide {
+    @include flex_position(column, center, center);
+    width: 56px;
+    height: 80px;
+    padding: 0 4px 0 14px;
     background-color: $secondary-bg-color;
-    position: sticky;
-    top: 60px;
-    margin-top: 80px;
-    z-index: 9;
-    .filter_slide{
-     @include flex_position(column, center, center);
-     width: 56px;
-     height: 80px;
-     padding:0 4px 0 14px;
-     background-color: $secondary-bg-color;
     color: $text-secondary-color;
-    span.title{
-     font-size: 12px;
-     font-family: tanha;
-     font-weight: 900;
-     transition: border 0.2s ease;
+    span.title {
+      font-size: 12px;
+      font-family: tanha;
+      font-weight: 900;
+      transition: border 0.2s ease;
     }
-    span.icon{
-     font-size: 24px;
-     transition: color 1s ease;
-    }
-    }
-    .filter_slide:hover{
-     span.title{
-      border-bottom: 2px solid $text-secondary-color;
-      color:$text-primary-color;
-    }
-    span.icon{
-      color:$text-primary-color;
+    span.icon {
+      font-size: 24px;
+      transition: color 1s ease;
     }
   }
-   .swiper-button-next{
-    background-color:$secondary-bg-color;
+  .filter_slide:hover {
+    span.title {
+      border-bottom: 2px solid $text-secondary-color;
+      color: $text-primary-color;
+    }
+    span.icon {
+      color: $text-primary-color;
+    }
+  }
+  .swiper-button-next {
+    background-color: $secondary-bg-color;
     border-radius: 50%;
     border: 0.5px solid rgb(0 0 0 / 0.3);
     width: 27px;
     height: 27px;
-    &::after{
-      content: 'prev';
-    font-size: 12px;
-    font-weight: 900;
-    color: $text-primary-color;
+    &::after {
+      content: "prev";
+      font-size: 12px;
+      font-weight: 900;
+      color: $text-primary-color;
     }
-   }
-   .swiper-button-prev{
-    background-color:$secondary-bg-color;
+  }
+  .swiper-button-prev {
+    background-color: $secondary-bg-color;
     border-radius: 50%;
     border: 0.5px solid rgb(0 0 0 / 0.3);
     width: 27px;
     height: 27px;
     right: 0;
     box-shadow: 0px 0px 16px 16px white;
-    &::after{
-      content: 'prev';
-    font-size: 12px;
-    font-weight: 900;
-    color: $text-primary-color;
+    &::after {
+      content: "prev";
+      font-size: 12px;
+      font-weight: 900;
+      color: $text-primary-color;
     }
-   }
-   .filters_button_wrapper{
-    @include flex_position(row,end, center);
-    .filters_button{
+  }
+  .filters_button_wrapper {
+    @include flex_position(row, flex-end, center);
+    .filters_button {
       @include button_border;
       color: $text-primary-color;
       width: 150px;
       height: 50px;
-     &:hover{
-       background-color:$main-bg-color;
-       color: $text-primary-color;
-       @include button_border;
-     }
-      .icon{
+      &:hover {
+        background-color: $main-bg-color;
+        color: $text-primary-color;
+        @include button_border;
+      }
+      .icon {
         font-size: 16px;
       }
-      .title{
+      .title {
         font-size: 16px;
         margin-right: 5px;
       }
-     }
-   }
- 
+    }
   }
+}
+////card styles///
+.card {
+  .card_swiper_frame {
+    border-radius: 15px;
+    overflow: hidden;
+    .favorite_icon{
+      color: $primary-color;
+      font-size: 24px;
+      z-index: 2; 
+    }
+  }
+  .card_title {
+    @include flex_position(row, space-between,center);
+    .adress {
+      font-family: "Vazirmatn";
+      font-style:normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    span{
+      font-family: 'Vazirmatn';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+    }
+    .star{
+      color: $primary-color;
+    }
+  }
+  .distance{
+     @extend .subtitle;
+     color: $text-secondary-color;
+  }
+.date{
+  @extend .subtitle;
+  color: $text-secondary-color;
+}
+.price{
+  @extend .subtitle;
+  color: $text-primary-color;
+}
+}
+

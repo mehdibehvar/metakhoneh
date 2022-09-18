@@ -12,11 +12,8 @@ export default function Layout({ children }: { children: ReactNode }) {
   <div className="layout">
           <Navbar/>
           <FilterSection/>
-          <Container style={{border:"1px solid black" ,marginTop:5}}> 
+          <Container> 
             <main>{children}</main>
-            <div style={{height:"1200px",backgroundColor:"yellow"}}>
-
-            </div>
          </Container>
        <MobileNavbar/>
     </div>
