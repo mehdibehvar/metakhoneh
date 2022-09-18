@@ -104,6 +104,9 @@ textarea {
   justify-content: $justify-content;
   align-items: $align-items;
 }
+@mixin button_border {
+  border: 1px solid #DDDDDD;
+}
 ////layout/////////////////////////
 .layout{
   background-color: $main-bg-color;
@@ -154,6 +157,7 @@ textarea {
     position: sticky;
     top: 60px;
     margin-top: 80px;
+    z-index: 9;
     .filter_slide{
      @include flex_position(column, center, center);
      width: 56px;
@@ -174,7 +178,7 @@ textarea {
     }
     .filter_slide:hover{
      span.title{
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $text-secondary-color;
       color:$text-primary-color;
     }
     span.icon{
@@ -209,4 +213,26 @@ textarea {
     color: $text-primary-color;
     }
    }
+   .filters_button_wrapper{
+    @include flex_position(row,end, center);
+    .filters_button{
+      @include button_border;
+      color: $text-primary-color;
+      width: 150px;
+      height: 50px;
+     &:hover{
+       background-color:$main-bg-color;
+       color: $text-primary-color;
+       @include button_border;
+     }
+      .icon{
+        font-size: 16px;
+      }
+      .title{
+        font-size: 16px;
+        margin-right: 5px;
+      }
+     }
+   }
+ 
   }

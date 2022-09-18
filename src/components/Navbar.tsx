@@ -4,6 +4,7 @@ import style from "../../styles/Navbar.module.scss";
 import { Container, Row, Col, Input, Button } from "reactstrap";
 import { BiSearch } from "react-icons/bi";
 import { BsGlobe2 } from "react-icons/bs";
+import { FiFilter } from "react-icons/fi";
 import { CgMenu } from "react-icons/cg";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,7 @@ function Navbar() {
           </Col>
           <Col className={style.search_col} lg="4" md="4"  sm="12" xs="12">
             <Input bsSize="lg" className={style.search_input} />
+        
             <Button className={style.search_button}>
               <span className={style.search_icon}>
                 {" "}

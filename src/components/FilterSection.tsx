@@ -1,7 +1,5 @@
 import { Button, Col, Container, Row } from "reactstrap";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FaRegBuilding } from "react-icons/fa";
+import { FiFilter } from "react-icons/fi";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,7 +13,10 @@ export default function FilterSection() {
         <Container>
         <Row style={{height:80}}>
     <Col
-      xs="10"
+      xs="12"
+      sm="12"
+      md="10"
+
     >
        
       <div>
@@ -23,10 +24,13 @@ export default function FilterSection() {
       </div>
     </Col>
     <Col
-      className="bg-light border"
+      className="filters_button_wrapper d-none d-sm-none d-md-flex "
       xs="2"
     >
-      .col-2
+      <Button outline className="filters_button mb-2" >
+        <span className="icon"><FiFilter/></span>
+        <span className="title">فیلترها</span>
+      </Button>
     </Col>
   </Row>
         </Container>
