@@ -17,3 +17,5 @@
 12. create navbars
 13. implement-filter-section
 14. install swiper slider
+15.name for search button and label for form
+16.Image display dimensions should match natural aspect ratio
