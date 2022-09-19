@@ -20,8 +20,9 @@
 15. npm i axios-create utils folder-db.json and axios HTTTPClient.ts 
 16. creat a fake rest api by json-server: npm install -g json-server
 17. add this to scripts:"json-server": "json-server --watch ./mock-api/db.json --port 6060", then npm run json-server to run your server.
-18.  create a types.ts Within the project’s root folder;and use https://app.quicktype.io/ to create the types
-19. config the the domains of images in the next.config.js
+18.create index.ts with isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
+19.  create a types.ts Within the project’s root folder
+20. config the the domains of images in the next.config.js
 
 
 

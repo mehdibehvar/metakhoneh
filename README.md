@@ -10,3 +10,4 @@ tips:
 5-for ::after in a classname in sass .classsample{ &::after{}}
 6-json-server :Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 Created with <3 for front-end developers who need a quick back-end for prototyping and mocking.
+7-we can have isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
