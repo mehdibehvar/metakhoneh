@@ -5,8 +5,9 @@ import Meta from '../components/Meta'
 import { NextPageWithLayout } from './_app'
 
 import CardItem from '../components/CardItem'
-import { axiosGet } from '../../utils/httpclient'
+
 import { IProduct } from '../../types'
+import { axiosGet } from '../../utils/httpclient'
 
 const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
  

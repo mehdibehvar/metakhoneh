@@ -1,4 +1,3 @@
-///export the types of your data;
 export interface IProduct {
     _id:                   string;
     listing_url:           string;
@@ -104,10 +103,7 @@ export interface Host {
 }
 
 export interface Images {
-    thumbnail_url:  string;
-    medium_url:     string;
-    picture_url:    string;
-    xl_picture_url: string;
+    picture_url: string[];
 }
 
 export interface ReviewScores {

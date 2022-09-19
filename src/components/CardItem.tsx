@@ -10,8 +10,8 @@ import "swiper/css/pagination";
 import Image from 'next/image'
 import { IProduct } from '../../types';
 export default function CardItem({product}:{product:IProduct}) {
-  const {address,price,images}=product;
-  console.log(images.picture_url);
+  const {address,price,images,review_scores}=product;
+  console.log(review_scores.review_scores_rating);
   
   return (
        <Card
@@ -31,26 +31,18 @@ export default function CardItem({product}:{product:IProduct}) {
             clickable: true,
           }}
           modules={[Pagination,Navigation]}
-       
         >
-          <SwiperSlide>
+         {images.picture_url.map((url,index)=> <SwiperSlide
+         key={index}
+         >
          <div style={{width:"100%",height:"200px"}}>
          <Image
-        src={`${images.picture_url}`}
+        src={`${url}`}
         alt="coronokid"
         layout='fill'
         />
          </div>
-          </SwiperSlide>
-          <SwiperSlide>
-         <div style={{width:"100%",height:"200px"}}>
-         <Image
-        src={"/assets/images/home2.webp"}
-        alt="home2"
-        layout='fill'
-        />
-         </div>
-          </SwiperSlide>
+          </SwiperSlide>)}
         </Swiper>
       </div>
     <CardBody className='p-0'>
@@ -58,8 +50,8 @@ export default function CardItem({product}:{product:IProduct}) {
      <div><h6 className='adress mb-0'>{address.street}</h6></div>
      <div className='pb-1'>
       <span className='score'>امتیاز:</span>
-      <span className='star mx-2'><AiFillStar/></span>
-      <span className='score_number'>4.5</span>
+      <span className='star mx-1'><AiFillStar/></span>
+      <span className='score_number'>{review_scores.review_scores_rating.$numberInt}</span>
      </div>
       </CardTitle>
       <CardSubtitle
