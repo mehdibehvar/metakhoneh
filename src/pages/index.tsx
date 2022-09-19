@@ -5,52 +5,21 @@ import Meta from '../components/Meta'
 import { NextPageWithLayout } from './_app'
 
 import CardItem from '../components/CardItem'
+import { axiosGet } from '../../utils/httpclient'
+import { IProduct } from '../../types'
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
+ 
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>
 
   <Container>
   <Row className='gx-4 mt-3'>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-    <Col xs="12" sm="6" md="6" lg="4" xl="3" >
-    <CardItem/>
-    </Col>
-
- 
+    {products.map((product)=><Col key={product._id} xs="12" sm="6" md="6" lg="4" xl="3" >
+    <CardItem product={product}/>
+    </Col>)}
+   
   </Row>
 
   </Container>
@@ -59,6 +28,7 @@ const Home: NextPageWithLayout = () => {
 
   )
 }
+
 Home.getLayout=function getLayout(page:ReactElement) {
   return (
     <Layout>
@@ -67,3 +37,12 @@ Home.getLayout=function getLayout(page:ReactElement) {
   )
 }
 export default Home
+
+export async function getStaticProps() {
+  const products=await axiosGet("products");
+  return {
+    props:{
+      products
+    }
+  }
+}

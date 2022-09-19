@@ -8,7 +8,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from 'next/image'
-export default function CardItem() {
+import { IProduct } from '../../types';
+export default function CardItem({product}:{product:IProduct}) {
+  const {address,price,images}=product;
+  console.log(images.picture_url);
+  
   return (
        <Card
        className='border-0 mb-3 card'
@@ -32,7 +36,7 @@ export default function CardItem() {
           <SwiperSlide>
          <div style={{width:"100%",height:"200px"}}>
          <Image
-        src={"/assets/images/home.jpg"}
+        src={`${images.picture_url}`}
         alt="coronokid"
         layout='fill'
         />
@@ -51,7 +55,7 @@ export default function CardItem() {
       </div>
     <CardBody className='p-0'>
       <CardTitle tag="div" className='card_title mt-1'>
-     <div><h6 className='adress mb-0'>شیراز-معالی اباد</h6></div>
+     <div><h6 className='adress mb-0'>{address.street}</h6></div>
      <div className='pb-1'>
       <span className='score'>امتیاز:</span>
       <span className='star mx-2'><AiFillStar/></span>
@@ -74,7 +78,7 @@ export default function CardItem() {
       className="mb-0 price"
       tag="h6"
       >
-      <strong>500</strong> هزار تومان هر شب
+      <strong>{price.$numberDecimal}</strong> هزار تومان هر شب
       </CardSubtitle>
     </CardBody>
        </Card>
