@@ -8,12 +8,14 @@ import CardItem from '../components/CardItem'
 
 import { IProduct } from '../../types'
 import { axiosGet } from '../../utils/httpclient'
+import axios from 'axios'
 
 const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
+ console.log(products);
  
   return (
  <>
-<Meta title='اجاره خانه در سرتاسر کشور'/>
+<Meta title='جستجو در سرتاسر کشور'/>
 
   <Container>
   <Row className='gx-4 mt-3'>
@@ -40,16 +42,17 @@ Home.getLayout=function getLayout(page:ReactElement) {
 export default Home
 
 export async function getStaticProps() {
+    var qs = require('qs');
+var assert = require('assert');
   // Call an external API endpoint to get products.
-  const products=await axiosGet("products");
-  if(!products){
-    return {
-      notFound:true
-    }
-  }
+  const products=await axios.get("http://localhost:6060/products?address.market=yasuj&name=shiraz");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+  
+console.log(products.data);
+
   return {
     props:{
-      products
+      products:products.data
     },
       // Next.js will attempt to re-generate the page:
     // - When a request comes in

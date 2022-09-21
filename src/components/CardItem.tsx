@@ -11,7 +11,6 @@ import Image from 'next/image'
 import { IProduct } from '../../types';
 export default function CardItem({product}:{product:IProduct}) {
   const {address,price,images,review_scores}=product;
-  console.log(review_scores.review_scores_rating);
   
   return (
        <Card

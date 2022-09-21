@@ -23,6 +23,8 @@
 18.create index.ts with isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
 19.  create a types.ts Within the project’s root folder
 20. config the the domains of images in the next.config.js
+21. change the ui of search form#
+22 . Use the AsyncSelect component to load options from a remote source as the user types.
 
 
 

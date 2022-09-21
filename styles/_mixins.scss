@@ -15,5 +15,9 @@
     border: 1px solid #dddddd;
   }
   @mixin border_top {
-    border-top:1px solid rgb(215, 213, 213); ;
+    border-top:1px solid rgb(215, 213, 213);
+  }
+  @mixin dropDown_border{
+    border:1px solid rgb(215, 213, 213);
+    border-radius: 10px;
   }

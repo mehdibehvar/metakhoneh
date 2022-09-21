@@ -1,0 +1,91 @@
+.search_col {
+  @include flex_position(row,center,center); 
+    .form{
+        position: relative;
+        width: 100%;
+        height: 60px;
+        border-radius: 30px;
+        border: 1px solid #cfcfcf;
+          button.search_button {
+            background-color: #ff385c;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 9px;
+            left:8px;
+            border: none;
+            @include flex_position(row,center,center);
+            .search_icon {
+              font-size: 22px;
+              font-weight: 500;
+              color: #ffffff;
+              margin-top: 4px;
+              margin-left: 2px;
+            }
+          }
+          .destination{
+            position: absolute;
+            width: 30%;
+            height: 100%;
+            top:0px;
+            right: 2%;
+            border-left: 2px solid rgb(235, 235, 235);
+            text-align: center;
+            label{
+                font-size: 14px;
+                color: $text-primary-color;
+            }
+            .react-select-container{
+              text-align: right;
+               .react-select__control{
+                border: none;
+                max-height:30px;
+                min-height: 20px;
+                .react-select__value-container{
+                  align-items:flex-start;
+                  .react-select__placeholder{
+                    font-size: 12px;
+                  }
+                }
+                .react-select__indicators{display: none;}
+               }
+
+              .react-select__menu{
+                background-color:$secondary-bg-color;
+                width:300px;
+                height: 200px;
+                @include dropDown_border;
+                color:$text-primary-color;
+                overflow: hidden;
+                .react-select__menu-list{
+                display:flex;
+               width: 100%;
+                 flex-wrap: wrap;
+               height: 100%;
+                .react-select__option{
+                  color:$text-primary-color;
+                  background-color: #ff385c;
+                  margin: 5px;
+                  width: 80px;
+                  text-align: center;
+                }
+                }
+            } 
+          }
+          }
+         
+    }
+   
+  }
+  @media screen and (max-width:576px) {
+    .search_col{
+        .form {
+            width: 90%;
+        }
+        button.search_button{
+            left:32px;
+        }
+    }
+    
+  }

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Navbar from "../Navbar";
+import Navbar from "../navbar/Navbar";
 import { Container } from "reactstrap";
 import Meta from "../Meta";
 import MobileNavbar from "../MobileNavbar";
