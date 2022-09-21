@@ -36,7 +36,7 @@ export default function SearchInput() {
     <>
       <form className="form d-flex" onSubmit={formik.handleSubmit}>
         <CitySelect
-        onChange={value=>formik.setFieldValue('city',value.label)}
+        onChange={value=>formik.setFieldValue('city',value.value)}
          />
           {formik.errors.city ? <div className='city_error text-danger position-absolute top-100'>{formik.errors.city}</div> : null}
         <Button className="search_button" type="submit">
