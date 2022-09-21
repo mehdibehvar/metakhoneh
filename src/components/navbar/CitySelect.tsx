@@ -1,27 +1,34 @@
 import AsyncSelect from 'react-select/async';
-import {IColourOption,colourOptions} from "../../../utils/data"
+import {ICityOption,cityOptions} from "../../../utils/data"
+import {useState} from 'react'
 interface State {
   readonly inputValue: string;
 }
-const filterColors = (inputValue: string) => {
-    return colourOptions.filter((i) =>
-      i.label.toLowerCase().includes(inputValue.toLowerCase())
+const filterCitys = (inputValue: string) => {
+    return cityOptions.filter((i) =>
+      i.label.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase())
     );
   };
 const loadOptions = (
     inputValue: string,
-    callback: (options: IColourOption[]) => void
+    callback: (options: ICityOption[]) => void
   ) => {
     setTimeout(() => {
-      callback(filterColors(inputValue));
+      callback(filterCitys(inputValue));
     }, 1000);
   };
 
   
 interface IProps{
-    onChange:(value:any)=>void
+    onChange:(value:any)=>void,
 }
-export default function CitySelect() {
+export default function CitySelect({onChange}:IProps) {
+    const [inputValue, setInputValue] = useState<string>('')
+    const handleInputChange = (newValue: string) => {
+        const inputValue = newValue;
+        setInputValue(inputValue);
+        return inputValue;
+      };
 
   return (
     <div className='destination'>
@@ -33,7 +40,8 @@ export default function CitySelect() {
       cacheOptions
       loadOptions={loadOptions}
       defaultOptions
-    //   onInputChange={handleInputChange}
+      onInputChange={handleInputChange}
+      onChange={(value)=>onChange(value)}
     />
   </div>
   )

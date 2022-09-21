@@ -1,4 +1,4 @@
-export interface IColourOption {
+export interface ICityOption {
     readonly value: string;
     readonly label: string;
     readonly color: string;
@@ -6,17 +6,17 @@ export interface IColourOption {
     readonly isDisabled?: boolean;
   }
   
-  export const colourOptions: readonly IColourOption[] = [
-    { value: 'shiraz', label: 'shiraz', color: '#00B8D9', isFixed: true },
-    { value: 'blue', label: 'تهران', color: '#0052CC', isDisabled: true },
-    { value: 'purple', label: 'کرمان', color: '#5243AA' },
-    { value: 'red', label: 'یاسوج', color: '#FF5630', isFixed: true },
-    { value: 'orange', label: 'اصفهان', color: '#FF8B00' },
-    { value: 'yellow', label: 'یزد', color: '#FFC400' },
-    { value: 'green', label: 'تبریز', color: '#36B37E' },
-    { value: 'forest', label: 'مشهد', color: '#00875A' },
-    { value: 'slate', label: 'رشت', color: '#253858' },
-    { value: 'silver', label: 'سنندج', color: '#666666' },
+  export const cityOptions: readonly ICityOption[] = [
+    { value: 'shiraz', label: 'شیراز', color: '#00B8D9', isFixed: true },
+    { value: 'tehran', label: 'تهران', color: '#0052CC' },
+    { value: 'kerman', label: 'کرمان', color: '#5243AA' },
+    { value: 'yasuj', label: 'یاسوج', color: '#FF5630', isFixed: true },
+    { value: 'esfehan', label: 'اصفهان', color: '#FF8B00' },
+    { value: 'yazd', label: 'یزد', color: '#FFC400' },
+    { value: 'Tabriz', label: 'تبریز', color: '#36B37E',isDisabled: true },
+    { value: 'Mashhad', label: 'مشهد', color: '#00875A' },
+    { value: 'Rasht', label: 'رشت', color: '#253858' },
+    { value: 'Sanandaj', label: 'سنندج', color: '#666666' },
   ];
   
 //   export interface FlavourOption {

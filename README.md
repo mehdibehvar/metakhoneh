@@ -11,3 +11,4 @@ tips:
 6-json-server :Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 Created with <3 for front-end developers who need a quick back-end for prototyping and mocking.
 7-we can have isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
+8-this regex omit  space and other things except [a-z,A-Z,0-9] {  const inputValue = newValue.replace(/\W/g, '')} so it omit persian words
