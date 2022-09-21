@@ -4,6 +4,7 @@ import { Button, Form, Input } from "reactstrap";
 import CitySelect from "./CitySelect";
 import {useState} from "react"
 import { useFormik } from 'formik';
+import { useRouter } from "next/router";
 interface IErrors{
   city?:string
 }
@@ -11,6 +12,8 @@ interface IFormValues{
   city:string
 }
 export default function SearchInput() {
+  const router=useRouter();
+  
   const initialValues:IFormValues={
     city:""
   };
@@ -25,7 +28,7 @@ export default function SearchInput() {
     initialValues,
     validate,
     onSubmit: (values) => {
-      console.log(values.city);
+        router.push(`/search/city/${values.city}`)
     },
   });
  
@@ -47,4 +50,4 @@ export default function SearchInput() {
   );
 }
 
-
+///setFieldValue:Set the value of a field imperatively. field should match the key of values you wish to update. Useful for creating custom input change handlers
