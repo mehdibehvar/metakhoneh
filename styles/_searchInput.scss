@@ -74,7 +74,18 @@
             } 
           }
           }
-         
+          
+          .start_date{
+            @extend .destination;
+            right:32%!important;
+      .custom_input{
+        font-size: 16px;
+        width: 90%;
+        &::placeholder{
+          font-size: 12px;
+        }
+      }
+            }
     }
    
   }

@@ -28,6 +28,7 @@
 23. config Formik with react-select
 24. create search page (ssr) (because data must be fetched at request time)
 25. create a skeleton;
+26. implement datepicker
 
 
 

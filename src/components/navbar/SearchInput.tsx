@@ -5,17 +5,20 @@ import CitySelect from "./CitySelect";
 import {useState} from "react"
 import { useFormik } from 'formik';
 import { useRouter } from "next/router";
+import { StartDate } from "./StartDate";
 interface IErrors{
   city?:string
 }
 interface IFormValues{
-  city:string
+  city:string,
+  startDate:any;
 }
 export default function SearchInput() {
   const router=useRouter();
   
   const initialValues:IFormValues={
-    city:""
+    city:"",
+    startDate:null,
   };
   const validate =( values:IFormValues )=> {
     const errors:IErrors = {}
@@ -28,7 +31,9 @@ export default function SearchInput() {
     initialValues,
     validate,
     onSubmit: (values) => {
-        router.push(`/search/city/${values.city}`)
+        router.push(`/search/city/${values.city}&date=${values.startDate.unix}`)
+        console.log(values.startDate.unix);
+        
     },
   });
  
@@ -39,7 +44,8 @@ export default function SearchInput() {
         onChange={value=>formik.setFieldValue('city',value.value)}
          />
           {formik.errors.city ? <div className='city_error text-danger position-absolute top-100'>{formik.errors.city}</div> : null}
-        <Button className="search_button" type="submit">
+          <StartDate handlePickStartDate={value=>formik.setFieldValue('startDate',value)}/>
+          <Button className="search_button" type="submit">
           <span className="search_icon">
             {" "}
             <BiSearch />

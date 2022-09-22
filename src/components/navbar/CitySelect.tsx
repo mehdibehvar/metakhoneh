@@ -43,6 +43,6 @@ export default function CitySelect({onChange}:IProps) {
       onInputChange={handleInputChange}
       onChange={(value)=>onChange(value)}
     />
-  </div>
+    </div>
   )
 }
