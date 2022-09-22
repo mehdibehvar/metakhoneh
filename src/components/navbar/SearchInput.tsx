@@ -32,7 +32,7 @@ export default function SearchInput() {
     validate,
     onSubmit: (values) => {
         router.push(`/search/city/${values.city}&date=${values.startDate.unix}`)
-        console.log(values.startDate.unix);
+        console.log(values.startDate);
         
     },
   });
