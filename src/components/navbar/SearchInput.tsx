@@ -30,8 +30,8 @@ export default function SearchInput() {
     initialValues,
     validate,
     onSubmit: (values) => {
- main
-        router.push(`/search/city/${values.city}&date=${values.startDate.unix}`)
+      router.push(`/search/city/${values.city}&startDate=${values.startDate.dayOfYear}`)   
+      ///use dayofYear instead unix because the unix should change in database by every milisecond;///  
     
 
     },
