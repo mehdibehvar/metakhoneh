@@ -1,0 +1,27 @@
+
+.card_skeleton{
+    .card_body_skeleton{
+        height:90px;
+    }
+    
+}
+.filters_slider_skeleton{
+    @include flex-position(row,center,center);
+
+    .filter_slide{
+        width: 60px;
+        .icon_skeleton {
+            width: 40px;
+            height: 40px;
+        
+        }
+        .title_skeleton {
+            width: 60px;
+            height: 16px;
+        }
+        .arrow_icon_skeleton{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

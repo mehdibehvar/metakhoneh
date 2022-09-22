@@ -17,8 +17,7 @@ export default function FilterSlider() {
 const [perView,setPerView]=useState<number>(10)
   useEffect(() => {
     if(window.outerWidth<768){
-      console.log(window.outerWidth)
-      setPerView(6)
+      setPerView(6);
     }
   },[])
   

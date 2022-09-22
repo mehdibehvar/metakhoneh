@@ -12,3 +12,9 @@ tips:
 Created with <3 for front-end developers who need a quick back-end for prototyping and mocking.
 7-we can have isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
 8-this regex omit  space and other things except [a-z,A-Z,0-9] {  const inputValue = newValue.replace(/\W/g, '')} so it omit persian words
+9-in the dispatch we invoke the actions{dispatch(hideSkeleton())} but in the useSelector we don't invoke the selector{useAppSelector(selectStyles)};
+10- wrap your getLayout function with Provider otherwise you can't access store in your components that are not childrens of your layout.{ <Provider store={store}> 
+{ getLayout(
+    <Component {...pageProps} />
+  )}
+  </Provider>}

@@ -6,10 +6,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import FilterSlider from "./FilterSlider";
+import { useAppSelector } from "../app/hooks";
+import { selectStyles } from "../features/styleSlice";
+import FiltersSkeleton from "./skeletons/FiltersSkeleton";
+
 
 export default function FilterSection() {
+  const {skeleton}=useAppSelector(selectStyles);
+
+  
   return (
-    <section className="filter_section">
+  <>
+  {skeleton?<FiltersSkeleton/>:<section className="filter_section">
         <Container>
         <Row style={{height:80}}>
     <Col
@@ -34,6 +42,7 @@ export default function FilterSection() {
     </Col>
   </Row>
         </Container>
-    </section>
+    </section>}
+  </>
   )
 }

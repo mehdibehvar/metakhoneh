@@ -26,7 +26,8 @@
 21. change the ui of search form#
 22. Use the AsyncSelect component to load options from a remote source as the user types.
 23. config Formik with react-select
-24.
+24. create search page (ssr) (because data must be fetched at request time)
+25. create a skeleton;
 
 
 
