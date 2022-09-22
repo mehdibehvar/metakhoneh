@@ -36,7 +36,7 @@
 
 
 
-
+fix:next-dev.js?3515:20 Warning: Prop `id` did not match. Server: "react-select-16-live-region" Client: "react-select-3-live-region"
 
 15.name for search button and label for form
 16.Image display dimensions should match natural aspect ratio

@@ -1,13 +1,11 @@
 import { BiSearch } from "react-icons/bi";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { Button, Form, Input } from "reactstrap";
+import { Button } from "reactstrap";
 import CitySelect from "./CitySelect";
-import {useState} from "react"
 import { useFormik } from 'formik';
 import { useRouter } from "next/router";
 import { StartDate } from "./StartDate";
 interface IErrors{
-  city?:string
+  city?:string,
 }
 interface IFormValues{
   city:string,
@@ -15,6 +13,7 @@ interface IFormValues{
 }
 export default function SearchInput() {
   const router=useRouter();
+ 
   
   const initialValues:IFormValues={
     city:"",
@@ -31,9 +30,11 @@ export default function SearchInput() {
     initialValues,
     validate,
     onSubmit: (values) => {
+ main
         router.push(`/search/city/${values.city}&date=${values.startDate.unix}`)
         console.log(values.startDate);
         
+
     },
   });
  
