@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
-import { encode } from 'querystring'
 import React, { ReactElement } from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import { StringDecoder } from 'string_decoder'
 import { IProduct } from '../../../../types'
-import { axiosGet } from '../../../../utils/httpclient'
+import { axiosGet } from '../../../../utils/HTTPClient'
 import CardItem from '../../../components/CardItem'
 import Layout from '../../../components/layouts/Layout'
 import Meta from '../../../components/Meta'
@@ -43,7 +41,7 @@ export default Searched;
 
 export async function getServerSideProps(context:any) {
    const {query}=context;
-   const {city,cityName}=query;
+   const {city,cityName}=query; 
    const reversCityName=reverseString(cityName);
    // fetch data at request time and pre-render the result.
   const products= await axiosGet(`/products?address.market=${cityName}`);

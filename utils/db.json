@@ -2,6 +2,7 @@
   "products":[
     {
       "_id": "10006546",
+      "startDate":"187",
       "listing_url": "https://www.airbnb.com/rooms/10006546",
       "name": "shiraz",
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube) - UNESCO World Heritage Site. Centenary building fully rehabilitated, without losing their original character.",
@@ -96,7 +97,7 @@
         ]
       },
       "address": {
-        "street": "Porto, Porto, Portugal",
+        "street": "Porto11111, Porto, Portugal",
         "suburb": "",
         "government_area": "Cedofeita, Ildefonso, Sé, Miragaia, Nicolau, Vitória",
         "market": "shiraz",
@@ -539,6 +540,7 @@
     },
     {
       "_id": "10006547",
+      "startDate":"188",
       "listing_url": "https://www.airbnb.com/rooms/10006546",
       "name": "Ribeira Charming Duplex",
       "summary": "Fantastic duplex apartment with three bedrooms, located in the historic area of Porto, Ribeira (Cube) - UNESCO World Heritage Site. Centenary building fully rehabilitated, without losing their original character.",
@@ -636,7 +638,7 @@
         "street": "yasuj, Porto, Portugal",
         "suburb": "",
         "government_area": "Cedofeita, Ildefonso, Sé, Miragaia, Nicolau, Vitória",
-        "market": "شیراز",
+        "market": "shiraz",
         "country": "Portugal",
         "country_code": "PT",
         "location": {
@@ -1076,6 +1078,7 @@
     },
     {
       "_id": "10006548",
+      "startDate":"187",
       "listing_url": "https://www.airbnb.com/rooms/10006546",
       "name": "shiraz",
       "summary": "sum",
@@ -1613,6 +1616,7 @@
     },
     {
       "_id": "10006549",
+      "startDate":"187",
       "listing_url": "https://www.airbnb.com/rooms/10006546",
       "name": "shiraz",
       "summary": "sum",
