@@ -29,6 +29,13 @@
 24. create search page (ssr) (because data must be fetched at request time)
 25. create a skeleton;
 26. implement datepicker
+27. create dropdown menu
+28. implement register and login logic:[
+    1-create loginReducer
+    2-create login page and r3egister page
+    3-create axiosAuthPost httpclient but be aware that onsubmit be async and in the try().catch() use await axiosAuthPost;
+]
+
 
 
 
