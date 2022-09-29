@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { ReactNode } from "react";
-import ReactPlayer from "react-player";
 import { Col, Container, Row } from "reactstrap";
 import Meta from "../Meta";
+import VideoCover from "./VideoCover";
 interface IProps {
   children: ReactNode;
   title: string;
@@ -30,12 +30,7 @@ const SignLayout = ({ children, title }: IProps) => {
               <main>{children}</main>
             </Col>
             <Col xs="12" sm="6">
-              <div className="video_wrapper h-100">
-                <ReactPlayer
-                 controls={false}
-               
-                  url={["/assets/videos/v1.mkv"]} />
-              </div>
+            <VideoCover/>
             </Col>
           </Row>
         </Container>

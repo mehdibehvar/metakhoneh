@@ -8,6 +8,7 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 import { axiosAuthPost } from "../../utils/LoginHttpClient"
 import { useAppDispatch, useAppSelector } from "../app/hooks"
 import SignLayout from "../components/layouts/SignLayout"
+import Loading from "../components/Loading"
 import { loginRejected, loginRequest, loginSuccess, selectUser } from "../features/loginSlice"
 import { NextPageWithLayout } from "./_app"
 interface IErrors{
@@ -59,7 +60,7 @@ const Login:NextPageWithLayout = () => {
     })
   return (
   <>
-  {loading?<div>loading</div>:  <div>
+  {loading?<div><Loading/></div>:  <div>
        <Form onSubmit={formik.handleSubmit}>
   <FormGroup>
     <Label for="email">

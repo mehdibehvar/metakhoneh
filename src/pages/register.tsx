@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks"
 import { loginRejected, loginRequest, loginSuccess, selectUser } from "../features/loginSlice"
 import { useSnackbar } from 'notistack';
 import { NextPageWithLayout } from "./_app"
+import Loading from "../components/Loading";
 const SignLayoutWithNoSSR = dynamic(() => import("../components/layouts/SignLayout"), {
   ssr: false
 });
@@ -48,9 +49,9 @@ const Register:NextPageWithLayout = () => {
        try {
         ///onsubmit should be async//////
           const resp=await axiosAuthPost("register",values)
-         dispatch(loginSuccess(resp.user));
-         enqueueSnackbar("ثبت نام با موفقیت انجام شد",{variant:"success",autoHideDuration: 1000})
+          dispatch(loginSuccess(resp.user));
           router.push("/")
+         enqueueSnackbar("ثبت نام با موفقیت انجام شد",{variant:"success",autoHideDuration: 1000})
        } catch (error:any) {  
         dispatch(loginRejected(error.response.data))
          if(error.message){
@@ -62,7 +63,7 @@ const Register:NextPageWithLayout = () => {
     })
   return (
 <>
-{loading?<div>loading</div>:    <div>
+{loading?<div><Loading/></div>:    <div>
      <Form onSubmit={formik.handleSubmit}>
   <FormGroup>
     <Label for="fullName">

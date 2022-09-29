@@ -1,15 +1,18 @@
-import Image from "next/image";
 
 export default function Loading() {
   return (
-    <div style={{width:"50px",height:"50px",display:"inline-block"}}>
-        <Image
-        src={"/cargando-loading.gif"}
-        alt="loading"
-        width={50}
-        height={50}
-        layout="responsive"
-        />
+    <div className="loader">
+     <div className="center">
+     <div className="item  item-1"></div>
+      <div className="item item-2"></div>
+      <div className="item item-3"></div>
+      <div className="item item-4"></div>
+      <div className="item item-5"></div>
+      <div className="item item-6"></div>
+      <div className="item item-7"></div>
+      <div className="item item-8"></div>
+     </div>
+   
     </div>
   )
 }

@@ -34,7 +34,9 @@
     1-create loginReducer
     2-create login page and r3egister page
     3-create axiosAuthPost httpclient but be aware that onsubmit be async and in the try().catch() use await axiosAuthPost;
+    4-implement logout and remove cookie
 ]
+29. create a loading component;
 
 
 
