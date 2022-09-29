@@ -5,14 +5,18 @@ import { GrClose } from "react-icons/gr";
 import { BiEdit } from "react-icons/bi";
 import { HiOutlineLogin } from "react-icons/hi";
 import Link from "next/link";
-import { useAppSelector } from "../../app/hooks";
-import { selectUser } from "../../features/loginSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { logoutRequest, selectUser } from "../../features/loginSlice";
 import dynamic from "next/dynamic";
+import { Button } from "reactstrap";
 function Menu() {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const {userInfo}=useAppSelector(selectUser);
- 
+  const dispatch=useAppDispatch(); 
+ const handleLogout=()=>{
+  dispatch(logoutRequest());
+ }
   return (
     <div className="dropdown_menu">
       <span onClick={toggle} className="hambergur_menu">
@@ -55,7 +59,11 @@ function Menu() {
                 <li><span><HiOutlineLogin/></span>علاقمندی ها</li>
                 <li><span><HiOutlineLogin/></span>میزبان شوید</li>
                 <li><span><HiOutlineLogin/></span>درباره ما</li>
-                <li><span><HiOutlineLogin/></span>خروج</li>
+                <li>
+                  <Button className="logout" onClick={handleLogout} outline>
+                  <span   ><HiOutlineLogin/></span>خروج
+                  </Button>
+                </li>
             </ul>
         </div>
       </div>

@@ -46,15 +46,15 @@ const Register:NextPageWithLayout = () => {
         closeSnackbar()
        dispatch(loginRequest())
        try {
+        ///onsubmit should be async//////
           const resp=await axiosAuthPost("register",values)
          dispatch(loginSuccess(resp.user));
          enqueueSnackbar("ثبت نام با موفقیت انجام شد",{variant:"success",autoHideDuration: 1000})
-          Cookies.set("userInfo",JSON.stringify(resp.user))
           router.push("/")
        } catch (error:any) {  
-         if(error.response.data){
-          dispatch(loginRejected(error.response.data))
-              enqueueSnackbar(`${error.response.data.message}`,{variant:"error",autoHideDuration: 1000})
+        dispatch(loginRejected(error.response.data))
+         if(error.message){
+              enqueueSnackbar(`${error.message}`,{variant:"error",autoHideDuration: 1000})
         }
         
        }

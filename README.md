@@ -18,3 +18,4 @@ Created with <3 for front-end developers who need a quick back-end for prototypi
     <Component {...pageProps} />
   )}
   </Provider>}
+11- solve this error in git push:fatal: unable to access 'https://github.com/mehdibehvar/metakhoneh.git/': OpenSSL SSL_connect: Connection was reset in connection to github.com:443 

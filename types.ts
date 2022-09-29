@@ -130,7 +130,7 @@ export interface IFormikValues{
     password:string
 }
 export interface IPostBody{
-    name:string,
+    name?:string,
     email:string,
     password:string
 

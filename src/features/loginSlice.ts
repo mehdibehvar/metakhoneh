@@ -4,8 +4,8 @@ import { IUser, IUserInfo } from "../../types";
 import { RootState } from "../app/store";
 
 const userInfoCookie=Cookies.get("userInfo");
-type myfun=()=>IUserInfo |null
-const userInfoObj:myfun=()=>{
+type myfun=IUserInfo |null
+const userInfoObj=():myfun=>{
   if (typeof userInfoCookie!=="undefined") {
     return JSON.parse(userInfoCookie)
    }else{
@@ -56,20 +56,24 @@ const loginSlice=createSlice({
       },
       loginSuccess:(state,action:PayloadAction<any>)=>{
         const user=action.payload;
+        Cookies.set("userInfo",JSON.stringify(user))
         state.loading=false;
         state.userInfo=user;
         state.message="حساب شما با موفقیت ثبت شد.";
         state.status=true;
       },
       loginRejected:(state,action)=>{
-        const {message,status}=action.payload;
+        const {message}=action.payload;
         state.message=message;
         state.loading=false;
-        state.status=status;
+      },
+      logoutRequest:(state)=>{
+        state.userInfo=null;
+        Cookies.remove("userInfo")
       }
     },
    
 });
 export const selectUser = (state: RootState) => state.user;
-export const {loginRequest,loginSuccess,loginRejected}=loginSlice.actions;
+export const {loginRequest,loginSuccess,loginRejected,logoutRequest}=loginSlice.actions;
 export default loginSlice.reducer;

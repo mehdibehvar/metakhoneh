@@ -114,6 +114,15 @@
                       margin-left: 5px;
                     }
                   }
+                  .logout{
+                    color: red;
+                    cursor: pointer;
+                    border: none;
+                    padding: 0;
+                    &:hover{
+                      background-color: transparent;
+                    }
+                  }
                 }
             }
         }

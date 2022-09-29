@@ -1,9 +1,14 @@
+import axios from "axios"
 import { ErrorMessage, useFormik, validateYupSchema } from "formik"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { useSnackbar } from "notistack"
 import { ReactElement } from "react"
 import { Button, Form, FormGroup, Input, Label } from "reactstrap"
-import { useAppDispatch } from "../app/hooks"
+import { axiosAuthPost } from "../../utils/LoginHttpClient"
+import { useAppDispatch, useAppSelector } from "../app/hooks"
 import SignLayout from "../components/layouts/SignLayout"
+import { loginRejected, loginRequest, loginSuccess, selectUser } from "../features/loginSlice"
 import { NextPageWithLayout } from "./_app"
 interface IErrors{
     fullNameError?:string,
@@ -16,8 +21,11 @@ export interface IFormikValues{
     password:string
 }
 
-const Register:NextPageWithLayout = () => {
+const Login:NextPageWithLayout = () => {
+  const {enqueueSnackbar,closeSnackbar}=useSnackbar()
     const dispatch=useAppDispatch();
+    const {loading}=useAppSelector(selectUser)
+    const router=useRouter();
     const errors:IErrors={};
     const initialValues:IFormikValues={
         email:"",
@@ -35,13 +43,24 @@ const Register:NextPageWithLayout = () => {
     const formik=useFormik({
         initialValues,
         validate,
-       onSubmit(values) {
-    //    axiosPost('https://api.freerealapi.com/auth/register',)
+       onSubmit:async(values)=> {
+        closeSnackbar();
+         dispatch(loginRequest());
+         try {
+          const response=await axiosAuthPost("login",values);
+          dispatch(loginSuccess(response.user));
+          enqueueSnackbar(response.message,{variant:"success",autoHideDuration:1000})
+          router.push("/")
+         } catch (error:any) {
+          dispatch(loginRejected(error.response.data));
+          enqueueSnackbar(error.message,{variant:"error",autoHideDuration:2000})
+         }
        },
     })
   return (
-    <div>
-     <Form onSubmit={formik.handleSubmit}>
+  <>
+  {loading?<div>loading</div>:  <div>
+       <Form onSubmit={formik.handleSubmit}>
   <FormGroup>
     <Label for="email">
       ایمیل
@@ -51,6 +70,7 @@ const Register:NextPageWithLayout = () => {
       name="email"
       placeholder="ایمیل خود را وارد کنید..."
       type="email"
+      autoComplete="on"
       onChange={formik.handleChange}
       value={formik.values.email}
     />
@@ -64,6 +84,7 @@ const Register:NextPageWithLayout = () => {
       name="password"
       placeholder="رمز خود را وارد کنید..."
       type="password"
+      autoComplete="on"
       onChange={formik.handleChange}
       value={formik.values.password}
     />
@@ -71,8 +92,8 @@ const Register:NextPageWithLayout = () => {
   <Button type="submit">
     Submit
   </Button>
-</Form>
-<div>
+        </Form>
+    <div>
   <span>ایا حساب کاربری دارید؟</span>
   <Link href={"/register"}>
   <a>
@@ -80,14 +101,15 @@ const Register:NextPageWithLayout = () => {
   </a>
   </Link>
 </div>
-    </div>
+    </div>}
+  </>
   )
 }
-Register.getLayout=function getLayout(page:ReactElement) {
+Login.getLayout=function getLayout(page:ReactElement) {
     return (
         <SignLayout title="ورود در متاخونه">
             {page}
         </SignLayout>
     )
 }
-export default Register
+export default Login
