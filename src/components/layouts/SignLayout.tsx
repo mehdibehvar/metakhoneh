@@ -34,7 +34,7 @@ const SignLayout = ({ children, title }: IProps) => {
             <Col xs="12" sm="6">
               <main>{children}</main>
             </Col>
-            <Col xs="12" sm="6">
+            <Col className="videcover_col" xs="12" sm="6" >
             {showComponent?<VideoCover/>:null}
             </Col>
           </Row>
