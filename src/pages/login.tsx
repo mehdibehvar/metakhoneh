@@ -1,9 +1,9 @@
-import axios from "axios"
-import { ErrorMessage, useFormik, validateYupSchema } from "formik"
+
+import {  useFormik, validateYupSchema } from "formik"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useSnackbar } from "notistack"
-import { ReactElement } from "react"
+import { ReactElement} from "react"
 import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 import { axiosAuthPost } from "../../utils/LoginHttpClient"
 import { useAppDispatch, useAppSelector } from "../app/hooks"
@@ -25,7 +25,7 @@ export interface IFormikValues{
 const Login:NextPageWithLayout = () => {
   const {enqueueSnackbar,closeSnackbar}=useSnackbar()
     const dispatch=useAppDispatch();
-    const {loading}=useAppSelector(selectUser)
+    const {loading}=useAppSelector(selectUser);
     const router=useRouter();
     const errors:IErrors={};
     const initialValues:IFormikValues={
@@ -58,6 +58,8 @@ const Login:NextPageWithLayout = () => {
          }
        },
     })
+ 
+    
   return (
   <>
   {loading?<div><Loading/></div>:  <div>

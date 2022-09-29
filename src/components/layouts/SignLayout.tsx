@@ -3,11 +3,16 @@ import React, { ReactNode } from "react";
 import { Col, Container, Row } from "reactstrap";
 import Meta from "../Meta";
 import VideoCover from "./VideoCover";
+import { useEffect, useState } from "react"
 interface IProps {
   children: ReactNode;
   title: string;
 }
 const SignLayout = ({ children, title }: IProps) => {
+  const [showComponent, setShowComponent] = useState(false)
+  useEffect(() => {
+    setShowComponent(true)
+  }, [])
   return (
     <>
       <Meta title={title} />
@@ -30,7 +35,7 @@ const SignLayout = ({ children, title }: IProps) => {
               <main>{children}</main>
             </Col>
             <Col xs="12" sm="6">
-            <VideoCover/>
+            {showComponent?<VideoCover/>:null}
             </Col>
           </Row>
         </Container>

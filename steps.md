@@ -37,6 +37,7 @@
     4-implement logout and remove cookie
 ]
 29. create a loading component;
+30. solve react hydration error:In general this issue is caused by using a specific library or application code that is relying on something that could differ between pre-rendering and the browser:solve it by useEffect or daynamic-next
 
 
 
