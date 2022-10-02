@@ -9,7 +9,9 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { logoutRequest, selectUser } from "../../features/loginSlice";
 import dynamic from "next/dynamic";
 import { Button } from "reactstrap";
+import { useRouter } from "next/router";
 function Menu() {
+  const router=useRouter();
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const {userInfo}=useAppSelector(selectUser);
@@ -50,7 +52,7 @@ function Menu() {
         </div>
         <div className="body_dropdown w-100">
             <ul className="h-100 w-100 d-flex flex-column justify-content-around">
-              <Link href={"/login"}>
+              <Link href={`/login`}>
               <a>
               <li><span><HiOutlineLogin/></span>ورود</li>
               </a>

@@ -20,7 +20,6 @@ const Register:NextPageWithLayout = () => {
   const {loading}=useAppSelector(selectUser);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const router=useRouter();
-  const redirect=router.query.redirect;
     const dispatch=useAppDispatch();
     const errors:IErrors={};
     const initialValues:IFormikValues={
