@@ -124,3 +124,39 @@ export interface Review {
     reviewer_name: string;
     comments:      string;
 }
+export interface IFormikValues{
+    name:string,
+    email:string,
+    password:string
+}
+export interface IPostBody{
+    name?:string,
+    email:string,
+    password:string
+
+}
+export interface IUserInfo {
+    name:         string;
+    email:        string;
+    phone_number: string;
+    created:      Created;
+    uuid:         string;
+}
+
+export interface Created {
+    date:          Date;
+    timezone_type: number;
+    timezone:      string;
+}
+
+export interface IUser{
+    userInfo:IUserInfo | null,
+    status: boolean,
+    loading:boolean,
+    message:string
+}
+export interface IErrors{
+    nameError?:string,
+    emailError?:string,
+    passwordError?:string,
+}

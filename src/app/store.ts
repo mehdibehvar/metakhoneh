@@ -4,6 +4,7 @@ import {
     ThunkAction,
   } from '@reduxjs/toolkit';
 import counterSlice from '../features/counter/counterSlice';
+import loginSlice from '../features/loginSlice';
 import qoutesSlice from '../features/qoutes/qoutesSlice';
 import styleSlice from '../features/styleSlice';
 
@@ -11,7 +12,8 @@ export const store = configureStore({
     reducer: {
         counter:counterSlice,
         qoute:qoutesSlice,
-        styles:styleSlice
+        styles:styleSlice,
+        user:loginSlice
   // This is where we add reducers.
     },
   });

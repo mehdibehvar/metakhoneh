@@ -18,3 +18,10 @@ Created with <3 for front-end developers who need a quick back-end for prototypi
     <Component {...pageProps} />
   )}
   </Provider>}
+11- solve this error in git push:fatal: unable to access 'https://github.com/mehdibehvar/metakhoneh.git/': OpenSSL SSL_connect: Connection was reset in connection to github.com:443 
+12.-To inspect the props passed to your page, you can inspect the below element's content in your browser devtools:
+document.getElementById("__NEXT_DATA__").text
+13-for fix error openssl of git push:{
+  1-Switching remote URLs from HTTPS to SSH
+  2-ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+}

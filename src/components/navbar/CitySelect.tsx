@@ -1,6 +1,6 @@
 import AsyncSelect from 'react-select/async';
 import {ICityOption,cityOptions} from "../../../utils/data"
-import {useState} from 'react'
+import {useId, useState} from 'react'
 interface State {
   readonly inputValue: string;
 }
@@ -10,12 +10,12 @@ const filterCitys = (inputValue: string) => {
     );
   };
 const loadOptions = (
-    inputValue: string,
-    callback: (options: ICityOption[]) => void
+    inputValue:string,
+    callback:(options:ICityOption[])=>void
   ) => {
-    setTimeout(() => {
+    setTimeout(()=>{
       callback(filterCitys(inputValue));
-    }, 1000);
+    },1000);
   };
 
   
@@ -23,7 +23,7 @@ interface IProps{
     onChange:(value:any)=>void,
 }
 export default function CitySelect({onChange}:IProps) {
-    const [inputValue, setInputValue] = useState<string>('')
+    const [inputValue, setInputValue] = useState<string>('تهران')
     const handleInputChange = (newValue: string) => {
         const inputValue = newValue;
         setInputValue(inputValue);
@@ -39,9 +39,10 @@ export default function CitySelect({onChange}:IProps) {
      placeholder="انتخاب نام شهر..."
       cacheOptions
       loadOptions={loadOptions}
-      defaultOptions
+      defaultOptions={true}
       onInputChange={handleInputChange}
       onChange={(value)=>onChange(value)}
+      instanceId={useId()}
     />
     </div>
   )

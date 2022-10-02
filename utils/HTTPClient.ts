@@ -1,4 +1,5 @@
 import axios from "axios";
+
 axios.defaults.baseURL=process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function axiosGet(url:string) {  
@@ -6,8 +7,8 @@ export async function axiosGet(url:string) {
     .then(response=>response.data)
     .catch(error=>console.log(error))
 };
-// export async function post(url:string,data,config) {
-//     return await axios.post(url,data,config)
+// export async function axiosPost(url:string,data:IPostBody) {
+//     return await axios.post(url,data)
 //     .then(response=>response.data)
 // }
 // export function del(url:string,config={}) {

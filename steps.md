@@ -29,6 +29,17 @@
 24. create search page (ssr) (because data must be fetched at request time)
 25. create a skeleton;
 26. implement datepicker
+27. create dropdown menu
+28. implement register and login logic:[
+    1-create loginReducer
+    2-create login page and r3egister page
+    3-create axiosAuthPost httpclient but be aware that onsubmit be async and in the try().catch() use await axiosAuthPost;
+    4-implement logout and remove cookie
+]
+29. create a loading component;
+30. solve react hydration error:In general this issue is caused by using a specific library or application code that is relying on something that could differ between pre-rendering and the browser:solve it by useEffect or daynamic-next
+31. implement redirect router for login and register pages{failed}
+
 
 
 

@@ -2,6 +2,7 @@
 @import "_mixins";
 @import "_reset";
 @import "_extends";
+@import "_navbar";
 @import "_card";
 @import "_footer";
 @import "_layouts";
@@ -10,6 +11,9 @@
 @import "_filterSection";
 @import "_searchInput";
 @import "_skeleton";
+@import "_signLayout";
+@import "_loading";
+
 ////font style////////////////
 @font-face {
   font-family: Vazir-Medium;

@@ -1,0 +1,191 @@
+
+.navbar_wrapper {
+  border-bottom: 1px solid #dddddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color:$secondary-bg-color;
+  z-index: 10;
+  .navbar_container {
+    height: 80px;
+    .navbar_row {
+      height: 100%;
+    }
+    .brand_col {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      .brand {
+        width: 161px;
+        height: 46px;
+        margin-right: 19px;
+      }
+    }
+    .menu_col {
+    @include flex_position(row,center,center);
+      position: relative;
+      .menu {
+        position: absolute;
+        width: 77px;
+        height: 44px;
+        left: 6px;
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid #dddddd;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        transition: all 1s ease;
+        &:hover {
+          box-shadow: -1px 2px 3px 0px #00000078;
+          transform: translate3d(1px,0px,1px);
+        }
+        div.navbar_avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            left: 7px;
+          }
+          div.badge {
+            width: 16px;
+            height: 16px;
+             z-index: 10;     
+            background: #ff385c;
+            border-radius: 50%;
+            position: absolute;
+            left: 4px;
+            top: 0px;
+            span {
+              color: #ffffff;
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 14px;
+              position: absolute;
+              left: 4px;
+              top: 2px;
+              
+            }
+          }
+      .dropdown_menu{
+        .dropdown{
+            display: none;
+        }
+       .show{
+            display: block;
+            position:absolute;
+            top: 47px;
+            left: -69px;
+            width: 280px;
+            background-color:$secondary-bg-color;
+            .header_dropdown{
+                .profile_info {
+                   ul{  
+                    li{
+                        font-size: 14px;
+                        font-family: tanha;
+                        margin-right: 5px;
+                    }
+                   }
+                }
+                .profile_avatar{
+                    .avatar_image{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                       
+                    }
+                    .change_image{
+                        font-size: 10px;
+                        text-decoration: none;
+                        font-family: tanha;
+                    }
+                }
+            }
+            .body_dropdown{
+                height: 300px;
+                ul{
+                  li{
+                    span{
+                      margin-left: 5px;
+                    }
+                  }
+                  .logout{
+                    color: red;
+                    cursor: pointer;
+                    border: none;
+                    padding: 0;
+                    &:hover{
+                      background-color: transparent;
+                    }
+                  }
+                }
+            }
+        }
+       .hambergur_menu {
+          font-size: 20px;
+          position: absolute;
+          left: 48px;
+          top:7px;
+          color: #222222;
+          cursor: pointer;
+        }
+      
+      }
+      }
+      .globe {
+        position: absolute;
+        left: 106px;   
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(217, 217, 217, 0);
+        span {
+          color: #222222;
+          font-size: 20px;
+        }
+      }
+      .hosting {
+        position: absolute;
+        left: 172px;
+        background: rgba(217, 217, 217, 0);
+        width: 90px;
+        height: 44px;
+        border-radius: 22px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        span {
+          font-family: "Vazirmatn";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #3c3c3c;
+        }   
+      }
+     button:hover {
+        background: rgba(217, 217, 217, 0.36);
+      }
+     
+    }
+    @media screen and (max-width:992px) {
+        .brand_col{
+            .brand{
+                margin-right:0!important;
+            }
+        }
+    }
+   
+
+  }
+}
+
