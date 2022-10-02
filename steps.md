@@ -41,7 +41,7 @@
 31. implement redirect router for login and register pages{failed}
 
 
-
+reset commit
 
 
 
