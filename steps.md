@@ -44,7 +44,7 @@
     2-npm install -D @types/leaflet
 }
 
-
+reset commit
 
 
 
