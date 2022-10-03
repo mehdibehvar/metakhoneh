@@ -39,7 +39,10 @@
 29. create a loading component;
 30. solve react hydration error:In general this issue is caused by using a specific library or application code that is relying on something that could differ between pre-rendering and the browser:solve it by useEffect or daynamic-next
 31. implement redirect router for login and register pages{failed}
-
+32. implementation leaflet map:{
+    1-npm install react-leaflet
+    2-npm install -D @types/leaflet
+}
 
 
 
