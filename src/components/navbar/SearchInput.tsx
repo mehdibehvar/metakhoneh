@@ -7,6 +7,8 @@ import { StartDate } from "./StartDate";
 import { DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { hideLoader, showLoader } from "../../features/styleSlice";
 
 interface IErrors{
   city?:string,
@@ -17,6 +19,8 @@ interface IFormValues{
 }
 export default function SearchInput() {
   const router=useRouter();
+  const dispatch=useAppDispatch();
+
   const date = new DateObject({ calendar: persian, locale: persian_fa }) ;
   const initialValues:IFormValues={
     city:"",
@@ -33,14 +37,17 @@ export default function SearchInput() {
   const formik = useFormik({
     initialValues,
     validate,
-    onSubmit: (values) => {
-      router.push(`/search/city/${values.city}&startDate=${values.startDate.dayOfYear}`)  ;
+    onSubmit: async (values) => {
+     dispatch(showLoader())
+     await router.push(`/search/city/${values.city}&startDate=${values.startDate.dayOfYear}`);
+    dispatch(hideLoader())
       ///use dayofYear instead unix because the unix should change in database by every milisecond;///  
     },
   });
  
   return (
     <>
+   
       <form className="form d-flex" onSubmit={formik.handleSubmit}>
         <CitySelect
         onChange={value=>formik.setFieldValue('city',value.value)}

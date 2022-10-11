@@ -3,14 +3,12 @@ import { Col, Container, Row } from 'reactstrap'
 import Layout from '../components/layouts/Layout'
 import Meta from '../components/Meta'
 import { NextPageWithLayout } from './_app'
-
 import CardItem from '../components/CardItem'
-
 import { IProduct } from '../../types'
 import { axiosGet } from '../../utils/HTTPClient'
-
+// interface IProps extends IProduct
 const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
- 
+
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>
@@ -42,6 +40,16 @@ export default Home
 export async function getStaticProps() {
   // Call an external API endpoint to get products.
   const products=await axiosGet("products");
+  const requiredData=products.map((item:IProduct)=>{
+  return  {
+    name:item.name,
+   _id:item._id,
+   address:item.address
+   ,price:item.price,images:item.images,review_scores:item.review_scores
+  }
+  })
+
+  
   if(!products){
     return {
       notFound:true
@@ -49,7 +57,7 @@ export async function getStaticProps() {
   }
   return {
     props:{
-      products
+      products:requiredData
     },
       // Next.js will attempt to re-generate the page:
     // - When a request comes in:
