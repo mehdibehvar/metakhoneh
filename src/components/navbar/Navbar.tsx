@@ -19,7 +19,7 @@ function Navbar() {
           <Col className="d-none d-sm-none d-md-flex brand_col" lg="3" md="3">
             <Link href="/">
               <a>
-                <div className="brand">
+                <div className="brand"> 
                   <Image
                     src={"/assets/images/brand.png"}
                     alt="metakhoneh"

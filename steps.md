@@ -42,6 +42,10 @@
 32. implementation leaflet map:{
     1-npm install react-leaflet
     2-npm install -D @types/leaflet
+    3-add .leaflet-container css to global.scss or style={{ height: "80vh", width: "100vw" }}
+    4-add leaflet css link to _document.ts head or import "leaflet/dist/leaflet.css";
+    5-useeffect and axiosget products
+    5-iterate on products and return Marker 
 }
 
 reset commit

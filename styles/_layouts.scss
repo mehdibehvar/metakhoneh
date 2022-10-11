@@ -1,4 +1,27 @@
 ////layout/////////////////////////
 .layout {
     background-color: $main-bg-color;
+    .show_map_button{
+      background-color: $primary-color;
+      color: $text-primary-color;
+      border-radius:20px;
+      position: fixed;
+      top: 80%;
+      right: 50%;
+      transform: translateX(50%);
+      z-index: 98;
+      @include button_border;
+      &:hover{
+        background:$button-hover-bg-color!important;
+        color: $text-primary-color!important;
+      }
+    }
+    .map_wrapper{
+      position: relative;
+      .close_map_button{
+        @extend .show_map_button;
+        position: absolute;
+        top:-40px;
+      }
+    }
   }

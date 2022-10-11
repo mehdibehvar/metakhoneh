@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import {  useFormik } from "formik"
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
