@@ -18,6 +18,7 @@
     "cookies-next": "^2.1.1",
     "formik": "^2.2.9",
     "js-cookie": "^3.0.1",
+    "json-server": "^0.17.0",
     "leaflet": "^1.9.1",
     "next": "12.3.0",
     "notistack": "^2.0.5",
