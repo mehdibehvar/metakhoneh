@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { ReactElement } from 'react'
+import  { ReactElement } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import { IProduct } from '../../../../types'
 import { axiosGet } from '../../../../utils/HTTPClient'

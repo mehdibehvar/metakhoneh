@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <MapWithNoSSR />
           </div>
         ) : (
-          <Container>
+          <Container fluid>
             <main>{children}</main>
           </Container>
         )}

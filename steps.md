@@ -49,7 +49,13 @@
 }
 
 reset commit
-
+33-implement singlehome page
+34-implement lightgallery--note:gallery should be ltr{.lg-container{
+    .lg-outer .lg-inner{
+        direction: ltr!important;
+        }
+ }};
+ 
 
 
 

@@ -24,7 +24,7 @@
   /* Reapply the pointer cursor for anchor tags */
   a {
     cursor:pointer;
-    text-decoration: none;
+    text-decoration: none!important;
   }
   p {
     font-family: Tanha;

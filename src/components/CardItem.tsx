@@ -13,8 +13,9 @@ import { useEffect} from 'react';
 import CardSkeleton from './skeletons/CardSkeleton';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { hideSkeleton, selectStyles } from '../features/styleSlice';
+import Link from 'next/link';
 export default function CardItem({product}:{product:IProduct}) {
-  const {address,price,images,review_scores}=product;
+  const {address,price,images,review_scores,_id}=product;
   const dispatch=useAppDispatch();
   const {skeleton}=useAppSelector(selectStyles)
 
@@ -27,7 +28,8 @@ export default function CardItem({product}:{product:IProduct}) {
   },[product,dispatch])
   return (
     <>
-      {skeleton?<CardSkeleton/>:
+      {skeleton?<CardSkeleton/>:<Link href={`/product/${_id}`}>
+      <a>
       <Card
       className='border-0 mb-3 card'
    style={{
@@ -88,6 +90,9 @@ export default function CardItem({product}:{product:IProduct}) {
      </CardSubtitle>
    </CardBody>
       </Card>
+      </a>
+      </Link>
+   
       }
     </>
   )
