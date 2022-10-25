@@ -26,7 +26,8 @@ document.getElementById("__NEXT_DATA__").text
 13-for fix error openssl of git push:{
   1-Switching remote URLs from HTTPS to SSH
   2-ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-}
+} or git remote set-url {name} {url}
+{git remote set-url origin https://github.com/myName/GitTest.git}
 14-if your fun not async:[
    useEffect(() => {
       axiosGet("products").then(resp=>{

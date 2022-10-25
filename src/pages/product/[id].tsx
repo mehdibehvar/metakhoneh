@@ -1,8 +1,8 @@
 import  { ReactElement } from 'react'
 import { IProduct } from '../../../types';
 import { axiosGet } from '../../../utils/HTTPClient';
-import HomeGallery from '../../components/singleproduct/Gallery';
 import Layout from '../../components/layouts/Layout';
+import HomePicturesGallery from '../../components/singleproduct/homePicturesGallery';
 import { NextPageWithLayout } from '../_app';
 
 const SingleHome:NextPageWithLayout<{product:IProduct}> = ({product}) => {
@@ -10,7 +10,7 @@ const SingleHome:NextPageWithLayout<{product:IProduct}> = ({product}) => {
     
   return (
     <div>
-        <HomeGallery images={images.picture_url}/>
+        <HomePicturesGallery images={images.picture_url}/>
     </div>
   )
 }

@@ -54,7 +54,7 @@ reset commit
     .lg-outer .lg-inner{
         direction: ltr!important;
         }
- }};
+ }}; and for for getitems chek a condition if index < number of grid return ... else return an element with display=none
  
 
 

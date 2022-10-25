@@ -1,42 +1,35 @@
-// .gallery_grid_container{
-//     display: grid;
-//     gap: 10px;
-//     padding: 10px;}
+    ///this class name is belong to lightgallery elements////
     .lg-react-element{
         display: grid;
         gap: 5px;
-        // padding: 5px;
-       width: 100%;
-       height: 50vh;
-       overflow: hidden;
-       .image_wrapper{
-        width: 100%;
-        height: 100%;
-      
-       }
+    padding: 5px;
+   width: 100%;
+   height: 100%;
    
-
+    .not_display{
+        display: none;
+    }
         .item1{
             grid-column: 1/3;
             grid-row: 1/span 2;
             // margin-top: 10px;
-          
+          cursor: pointer;
         }
         .item2{
             grid-column: 3/4;
-       
+            cursor: pointer;
         }
         .item3{
             grid-column: 4;
-           
+            cursor: pointer;
         }
         .item4{
             grid-column: 3/4;
-       
+            cursor: pointer;
         }
         .item5{
             grid-column: 4;
-       
+            cursor: pointer;
         }
     }
  .lg-container{
