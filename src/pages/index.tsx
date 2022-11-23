@@ -12,7 +12,6 @@ const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>
-
   <Container>
   <Row className='gx-4 mt-3'>
     {products.map((product)=><Col key={product._id} xs="12" sm="6" md="6" lg="4" xl="3" >
@@ -40,6 +39,11 @@ export default Home
 export async function getStaticProps() {
   // Call an external API endpoint to get products.
   const products=await axiosGet("products");
+  if(!products){
+    return {
+      notFound:true
+    }
+  }
   const requiredData=products.map((item:IProduct)=>{
   return  {
     name:item.name,
@@ -50,11 +54,7 @@ export async function getStaticProps() {
   })
 
   
-  if(!products){
-    return {
-      notFound:true
-    }
-  }
+
   return {
     props:{
       products:requiredData

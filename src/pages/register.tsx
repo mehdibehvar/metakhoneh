@@ -51,6 +51,8 @@ const Register:NextPageWithLayout = () => {
           router.push("/")
          enqueueSnackbar("ثبت نام با موفقیت انجام شد",{variant:"success",autoHideDuration: 1000})
        } catch (error:any) {  
+        console.log(error);
+        
         dispatch(loginRejected(error.response.data))
          if(error.message){
               enqueueSnackbar(`${error.message}`,{variant:"error",autoHideDuration: 1000})

@@ -3,7 +3,7 @@
 2. npm install @reduxjs/toolkit react-redux [
     install redux-toolkit and then config it for next.js(just create store and add provider to _app.ts)
 ]
-
+ 
 3. Create src directory and in it:pages{pages of app} , features{for createSlices} , app{stor.ts and hooks.ts}
 4. inside app create two file: 1-store.ts 2.hooks.ts[in the hooks.ts we export useAppdispatch that asigned to thier types, so we will not need asign (export type AppDispatch = typeof store.dispatch;) to the usedispatch every time we want use it.]
 
@@ -20,7 +20,7 @@
 15. npm i axios-create utils folder-db.json and axios HTTTPClient.ts 
 16. creat a fake rest api by json-server: npm install -g json-server
 17. add this to scripts:"json-server": "json-server --watch ./mock-api/db.json --port 6060", then npm run json-server to run your server.
-18.create index.ts with isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
+18. create index.ts with isg(increment static generation) without getstaticpaths:just put  :return {props:{ products}, revalidate: 10,}
 19.  create a types.ts Within the project’s root folder
 20. config the the domains of images in the next.config.js
 21. change the ui of search form#

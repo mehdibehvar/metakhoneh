@@ -54,7 +54,7 @@ const loginSlice=createSlice({
       loginRequest:(state)=>{
        state.loading=true;
       },
-      loginSuccess:(state,action:PayloadAction<any>)=>{
+      loginSuccess:(state,action:PayloadAction<IUserInfo>)=>{
         const user=action.payload;
         Cookies.set("userInfo",JSON.stringify(user))
         state.loading=false;

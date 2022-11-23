@@ -1,6 +1,6 @@
 import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
 import { Html, Head, Main, NextScript } from 'next/document'
-class MyDocument extends Document {
+class MyDocument extends Document { 
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
