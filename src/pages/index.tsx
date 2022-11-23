@@ -8,7 +8,6 @@ import { IProduct } from '../../types'
 import { axiosGet } from '../../utils/HTTPClient'
 // interface IProps extends IProduct
 const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
-
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>
@@ -38,6 +37,8 @@ export default Home
 
 export async function getStaticProps() {
   // Call an external API endpoint to get products.
+
+  
   const products=await axiosGet("products");
   if(!products){
     return {
