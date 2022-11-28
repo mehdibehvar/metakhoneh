@@ -10,12 +10,13 @@ import { axiosGet } from '../../utils/HTTPClient'
 const Home: NextPageWithLayout<{products:IProduct[]}> = () => {
   const [products, setProducts] = useState<IProduct[]>([])
 useEffect(() => {
-  const getData=async () => {
+const dataFetch= async () => {
   const res= await axiosGet("products");
-   setProducts(res)
-  };
-  getData();
+  setProducts(res)
+};
+dataFetch();
 }, [])
+
 
 
   return (
