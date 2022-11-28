@@ -19,7 +19,14 @@
       .brand {
         width: 161px;
         height: 46px;
-        margin-right: 19px;
+        margin-right: 3px;
+        .my_logo{
+          width: 175px;
+          height: 50px;
+          path{
+            fill: $primary-color
+          }
+        }
       }
     }
     .menu_col {

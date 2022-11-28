@@ -7,6 +7,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import Link from "next/link";
 import SearchInput from "./SearchInput";
 import Menu from "./DropDownMenu";
+import MySvgLogo from "./myLogo";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,13 +21,7 @@ function Navbar() {
             <Link href="/">
               <a>
                 <div className="brand"> 
-                  <Image
-                    src={"/assets/images/brand.png"}
-                    alt="metakhoneh"
-                    layout="responsive"
-                    width={161}
-                    height={46}
-                  />
+                     <MySvgLogo/>
                 </div>
               </a>
             </Link>
