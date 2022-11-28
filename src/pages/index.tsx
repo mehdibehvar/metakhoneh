@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import Layout from '../components/layouts/Layout'
 import Meta from '../components/Meta'
@@ -7,7 +7,17 @@ import CardItem from '../components/CardItem'
 import { IProduct } from '../../types'
 import { axiosGet } from '../../utils/HTTPClient'
 // interface IProps extends IProduct
-const Home: NextPageWithLayout<{products:IProduct[]}> = ({products}) => {
+const Home: NextPageWithLayout<{products:IProduct[]}> = () => {
+  const [products, setProducts] = useState<IProduct[]>([])
+useEffect(() => {
+  const getData=async () => {
+  const res= await axiosGet("products");
+   setProducts(res)
+  };
+  getData();
+}, [])
+
+
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>
@@ -35,33 +45,33 @@ Home.getLayout=function getLayout(page:ReactElement) {
 }
 export default Home
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get products.
-  const products=await axiosGet("products");
-  // if(!products){
-  //   return {
-  //     notFound:true
-  //   }
-  // }
-  const requiredData=products.map((item:IProduct)=>{
-  return  {
-    name:item.name,
-   _id:item._id,
-   address:item.address
-   ,price:item.price,images:item.images,review_scores:item.review_scores
-  }
-  })
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get products.
+//   const products=await axiosGet("products");
+//   if(!products){
+//     return {
+//       notFound:true
+//     }
+//   }
+//   const requiredData=products.map((item:IProduct)=>{
+//   return  {
+//     name:item.name,
+//    _id:item._id,
+//    address:item.address
+//    ,price:item.price,images:item.images,review_scores:item.review_scores
+//   }
+//   })
 
-  return {
-    props:{
-      products:requiredData
-    },
-      // Next.js will attempt to re-generate the page:
-    // - When a request comes in:
-    // - At most once every 10 seconds:
-    revalidate: 10,
-  }
-}
+//   return {
+//     props:{
+//       products:requiredData
+//     },
+//       // Next.js will attempt to re-generate the page:
+//     // - When a request comes in:
+//     // - At most once every 10 seconds:
+//     revalidate: 10,
+//   }
+// }
 
 ///You should use getStaticProps if:
 ///The data required to render the page is available at build time ahead of a user’s request
