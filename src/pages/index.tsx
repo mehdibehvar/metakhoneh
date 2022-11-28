@@ -37,14 +37,12 @@ export default Home
 
 export async function getStaticProps() {
   // Call an external API endpoint to get products.
-
-  
   const products=await axiosGet("products");
-  if(!products){
-    return {
-      notFound:true
-    }
-  }
+  // if(!products){
+  //   return {
+  //     notFound:true
+  //   }
+  // }
   const requiredData=products.map((item:IProduct)=>{
   return  {
     name:item.name,
@@ -53,8 +51,6 @@ export async function getStaticProps() {
    ,price:item.price,images:item.images,review_scores:item.review_scores
   }
   })
-
-  
 
   return {
     props:{
