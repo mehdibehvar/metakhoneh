@@ -6,6 +6,7 @@ import L from "leaflet";
 import { useEffect, useState } from "react";
 import { axiosGet } from "../../../utils/HTTPClient";
 import { IProduct } from "../../../types";
+import { dbData } from "../../../utils/db";
 L.Marker.prototype.options.icon = L.icon({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   iconSize: [16, 25],
@@ -15,9 +16,9 @@ const LeafletMap = () => {
   const center = { lat: 29.663014745480055, lng: 52.58230870010543 };
   const [products, setProducts] = useState<IProduct[] | null>(null);
   useEffect(() => {
-    axiosGet("products").then((resp) => {
-      setProducts(resp);
-    });
+    // axiosGet("products").then((resp) => {
+    // });
+    setProducts(dbData);
   }, []);
 
   return (

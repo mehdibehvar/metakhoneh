@@ -5,20 +5,15 @@ import Meta from '../components/Meta'
 import { NextPageWithLayout } from './_app'
 import CardItem from '../components/CardItem'
 import { IProduct } from '../../types'
-import { axiosGet } from '../../utils/HTTPClient'
+import { axiosGet } from '../../utils/HTTPClient';
+import { dbData } from '../../utils/db'
 // interface IProps extends IProduct
 const Home: NextPageWithLayout<{products:IProduct[]}> = () => {
   const [products, setProducts] = useState<IProduct[]>([])
 useEffect(() => {
-const dataFetch= async () => {
-  const res= await axiosGet("products");
-  setProducts(res)
-};
-dataFetch();
+  const productData=dbData
+setProducts(productData)
 }, [])
-
-
-
   return (
  <>
 <Meta title='اجاره خانه در سرتاسر کشور'/>

@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL=process.env.NEXT_PUBLIC_BASE_URL;
+// axios.defaults.baseURL=process.env.NEXT_PUBLIC_BASE_URL;
 export async function axiosGet(url:string) {  
     return await axios.get(url)
     .then(response=>response.data)
