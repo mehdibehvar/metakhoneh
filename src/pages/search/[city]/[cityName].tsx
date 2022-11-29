@@ -12,7 +12,6 @@ import { NextPageWithLayout } from '../../_app'
 const Searched:NextPageWithLayout<{products:IProduct[]}>=({products}) => {
   const router=useRouter();
   const city=router.query.cityName;
-  console.log(router.query);
   const searchedData=dbData.filter((item)=>city?.includes(item.name))
   return (
     <>
